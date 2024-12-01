@@ -34,6 +34,7 @@ jobs:
       - name: Remove not uploading files
         run: |
           rm -rf src
+          rm -rf test
           rm LICENSE
           rm package-lock.json
           rm package.json
