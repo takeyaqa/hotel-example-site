@@ -31,6 +31,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Rename not uploading files
+        run: |
+          mv src .src
+          mv LICENSE .LICENSE
+          mv package-lock.json .package-lock.json
+          mv package.json .package.json
+          mv README.md .README.md
+          mv webpack.config.js .webpack.config.js
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
