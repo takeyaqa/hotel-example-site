@@ -5,6 +5,14 @@
 
 ---
 
+## Domain Migration Notice
+
+This website will migrate to a new domain, [https://hotel-example-site.takeyaqa.dev/](https://hotel-example-site.takeyaqa.dev/), starting from December 1, 2024.
+
+During December, the old domain ([https://hotel.testplanisphere.dev/](https://hotel.testplanisphere.dev/)) will remain accessible, but starting January 1, 2025, visitors will be automatically redirected to the new domain.
+
+---
+
 ## Repository Migration Notice
 
 This repository has been migrated to personal ownership. Previously managed under [Test Planisphere](https://github.com/testplanisphere), it is now maintained by [@takeyaqa](https://github.com/takeyaqa).
