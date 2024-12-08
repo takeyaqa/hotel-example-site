@@ -18,6 +18,7 @@
 
 > [!IMPORTANT]
 > This repository has been migrated to personal ownership. Previously managed under [Test Planisphere](https://github.com/testplanisphere), it is now maintained by [@takeyaqa](https://github.com/takeyaqa).
+>
 > The new repository URL is:
 >
 > [https://github.com/takeyaqa/hotel-example-site](https://github.com/takeyaqa/hotel-example-site)
