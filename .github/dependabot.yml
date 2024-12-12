@@ -17,7 +17,7 @@ updates:
   - package-ecosystem: "devcontainers"
     directory: "/"
     schedule:
-      interval: daily
+      interval: "daily"
     commit-message:
       prefix: "chore"
       include: "scope"
