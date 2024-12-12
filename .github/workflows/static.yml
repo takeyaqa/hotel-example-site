@@ -33,6 +33,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Remove not uploading files
         run: |
+          rm -rf .devcontainer
           rm -rf src
           rm -rf test
           rm LICENSE

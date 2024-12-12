@@ -4,9 +4,20 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      timezone: "Asia/Tokyo"
+    commit-message:
+      prefix: "build"
+      include: "scope"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-      timezone: "Asia/Tokyo"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+  - package-ecosystem: "devcontainers"
+    directory: "/"
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: "chore"
+      include: "scope"
