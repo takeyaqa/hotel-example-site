@@ -52,24 +52,4 @@ This site provides mocked booking hotel feature. It has input forms to log in, s
 
 ### Changelog
 
-#### v2.1.1 (2021-02-28)
-
-* [#31](https://github.com/takeyaqa/hotel-example-site/pull/31) Add rel=opener
-
-#### v2.1.0 (2020-08-31)
-
-* Remove old Japanese pages
-* Update dependencies
-
-#### v2.0.0 (2020-07-27)
-
-* Add English version
-* Move Japanese version
-
-#### v1.1.0 (2020-04-29)
-
-* Add example codes using Selenide and Capybara
-
-#### v1.0.0 (2020-04-14)
-
-* First release
+<https://github.com/takeyaqa/hotel-example-site/releases>
