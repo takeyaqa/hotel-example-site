@@ -1,6 +1,6 @@
 {
   "name": "hotel-example-site",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "private": true,
   "description": "Demo site for learning test automation (hotel reservation)",
   "scripts": {
