@@ -1,5 +1,6 @@
 const path = require('node:path');
 const CopyPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: 'production',
@@ -17,6 +18,14 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        exclude: /vendor\/.+/,
+      })
+    ],
   },
   devtool: 'source-map',
   plugins: [
