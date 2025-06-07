@@ -1,3 +1,5 @@
+import $ from 'jquery';
+import 'bootstrap';
 import {formatDateLong, parseDateISO} from './lib/formater.js';
 import {getUser, getSessionUser, logout, redirectToTop} from './lib/session.js';
 import {t} from './lib/messages.js';

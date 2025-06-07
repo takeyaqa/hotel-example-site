@@ -1,3 +1,7 @@
+import $ from 'jquery';
+import 'bootstrap';
+// import 'jquery-ui';
+// import './lib/datepicker-ja.js';
 import {formatCurrency, formatDateShort, parseDate, formatDateISO} from './lib/formater.js';
 import {getLocale, getAdditionalPlanPrice} from './lib/i18n.js';
 import {getSessionUser, getUser, canDisplayPlan, genTransactionId, redirectToTop} from './lib/session.js';

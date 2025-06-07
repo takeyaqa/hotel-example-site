@@ -1,3 +1,5 @@
+import $ from 'jquery';
+import 'bootstrap';
 import {isValidUser, getSessionUser, login, redirectToTop} from './lib/session.js';
 import {resetCustomValidity, setValidityMessage} from './lib/validation.js';
 import {t} from './lib/messages.js';

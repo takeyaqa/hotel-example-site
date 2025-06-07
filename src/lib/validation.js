@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import {t} from './messages.js';
 
 /**
