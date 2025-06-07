@@ -2,7 +2,7 @@ const path = require('node:path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     confirm: './src/confirm.js',
     icon: './src/icon.js',
@@ -48,5 +48,4 @@ module.exports = {
       ],
     }),
   ],
-  devtool: 'source-map',
 };
