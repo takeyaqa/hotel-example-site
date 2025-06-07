@@ -8,22 +8,7 @@
 ## Domain Migration Notice
 
 > [!IMPORTANT]
-> This website will migrate to a new domain, [https://hotel-example-site.takeyaqa.dev/](https://hotel-example-site.takeyaqa.dev/), starting from December 1, 2024.
->
-> During December, the old domain ([https://hotel.testplanisphere.dev/](https://hotel.testplanisphere.dev/)) will remain accessible, but starting January 1, 2025, visitors will be automatically redirected to the new domain.
-
----
-
-## Repository Migration Notice
-
-> [!IMPORTANT]
-> This repository has been migrated to personal ownership. Previously managed under [Test Planisphere](https://github.com/testplanisphere), it is now maintained by [@takeyaqa](https://github.com/takeyaqa).
->
-> The new repository URL is:
->
-> [https://github.com/takeyaqa/hotel-example-site](https://github.com/takeyaqa/hotel-example-site)
->
-> This migration does not affect the content or purpose of the repository. However, if you have cloned or forked this repository, you may need to update your remote URL.
+> This website has moved to a new domain, [https://hotel-example-site.takeyaqa.dev/](https://hotel-example-site.takeyaqa.dev/), as of December 1, 2024.
 
 ---
 
@@ -49,6 +34,20 @@ This site provides mocked booking hotel feature. It has input forms to log in, s
   * Due to the specification of HTML, the contents of the form are sent as the last part of the URL. Please note that it may be left in the GitHub server's logs and other records.
 * Do NOT use this site for stress testing.
 * We do not take any responsibilities by using this site.
+
+### Running Server
+
+For development, you can serve this site locally using any static file server.
+
+#### Example: Using Python (if Python 3 is installed)
+```bash
+python -m http.server 8080
+```
+
+After starting the server, open your browser and navigate to:
+- `http://localhost:8080/ja/` for the Japanese version
+- `http://localhost:8080/en-US/` for the English version
+
 
 ### Changelog
 
