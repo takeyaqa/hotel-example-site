@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 const MESSAGES = {
   'ja': require('../../data/ja/message.json'),
   'en-US': require('../../data/en-US/message.json'),

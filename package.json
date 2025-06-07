@@ -17,11 +17,10 @@
   "dependencies": {
     "bootstrap": "4.6.2",
     "jquery": "3.7.1",
-    "jquery-ui": "1.14.1",
-    "popper.js": "1.16.1"
+    "jquery-ui": "1.14.1"
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^13.0.0",
+    "copy-webpack-plugin": "13.0.0",
     "webpack": "5.99.9",
     "webpack-cli": "6.0.1"
   }

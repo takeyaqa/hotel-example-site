@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import 'bootstrap';
 import {getSessionUser, setLoginNavbar} from './lib/session.js';
 
 $(function() {

@@ -1,58 +1,22 @@
-const path = require('path');
+const path = require('node:path');
 const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
-    confirm: {
-      import: './src/confirm.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    icon: {
-      import: './src/icon.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    index: {
-      import: './src/index.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    login: {
-      import: './src/login.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    mypage: {
-      import: './src/mypage.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    plans: {
-      import: './src/plans.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    reserve: {
-      import: './src/reserve.js',
-      dependOn: ['jquery', 'popper', 'bootstrap', 'jqueryUi'],
-    },
-    signup: {
-      import: './src/signup.js',
-      dependOn: ['jquery', 'bootstrap'],
-    },
-    jquery: 'jquery',
-    popper: 'popper.js',
-    bootstrap: 'bootstrap',
-    jqueryUi: 'jquery-ui',
+    confirm: './src/confirm.js',
+    icon: './src/icon.js',
+    index: './src/index.js',
+    login: './src/login.js',
+    mypage: './src/mypage.js',
+    plans: './src/plans.js',
+    reserve: './src/reserve.js',
+    signup: './src/signup.js',
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
   },
   plugins: [
     new CopyPlugin({
@@ -60,6 +24,26 @@ module.exports = {
         {
           from: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
           to: 'css/bootstrap.min.css',
+        },
+        {
+          from: 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
+          to: 'vender/bootstrap.bundle.min.js',
+        },
+        {
+          from: 'node_modules/jquery/dist/jquery.min.js',
+          to: 'vender/jquery.min.js',
+        },
+        {
+          from: 'node_modules/jquery-ui/dist/themes/base/jquery-ui.min.css',
+          to: 'css/jquery-ui.min.css',
+        },
+        {
+          from: 'node_modules/jquery-ui/dist/jquery-ui.min.js',
+          to: 'vender/jquery-ui.min.js',
+        },
+        {
+          from: 'node_modules/jquery-ui/ui/i18n/datepicker-ja.js',
+          to: 'vender/datepicker-ja.js',
         },
       ],
     }),

@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import 'bootstrap';
 import {formatCurrency} from './lib/formater.js';
 import {getLocale} from './lib/i18n.js';
 import {getSessionUser, getUser, setLoginNavbar, canDisplayPlan} from './lib/session.js';

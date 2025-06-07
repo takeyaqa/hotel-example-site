@@ -1,5 +1,3 @@
-import $ from 'jquery';
-import 'bootstrap';
 import {formatCurrency, formatDateLong, parseDateISO} from './lib/formater.js';
 import {getAdditionalPlanPrice} from './lib/i18n.js';
 import {getTransactionId, deleteTransactionId, redirectToTop} from './lib/session.js';
