@@ -35,6 +35,20 @@ This site provides mocked booking hotel feature. It has input forms to log in, s
 * Do NOT use this site for stress testing.
 * We do not take any responsibilities by using this site.
 
+### Running Server
+
+For development, you can serve this site locally using any static file server.
+
+#### Example: Using Python (if Python 3 is installed)
+```bash
+python -m http.server 8080
+```
+
+After starting the server, open your browser and navigate to:
+- `http://localhost:8080/ja/` for the Japanese version
+- `http://localhost:8080/en-US/` for the English version
+
+
 ### Changelog
 
 <https://github.com/takeyaqa/hotel-example-site/releases>
