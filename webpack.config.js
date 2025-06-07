@@ -38,6 +38,10 @@ module.exports = {
           to: 'css/jquery-ui.min.css',
         },
         {
+          from: 'node_modules/jquery-ui/dist/themes/base/images/*.png',
+          to: 'css/images/[name].png',
+        },
+        {
           from: 'node_modules/jquery-ui/dist/jquery-ui.min.js',
           to: 'vender/jquery-ui.min.js',
         },
