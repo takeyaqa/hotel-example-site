@@ -1,11 +1,16 @@
+import messageJa from '../../data/ja/message.json';
+import messageEnUS from '../../data/en-US/message.json';
+import userJa from '../../data/ja/user.json';
+import userEnUS from '../../data/en-US/user.json';
+
 const MESSAGES = {
-  'ja': require('../../data/ja/message.json'),
-  'en-US': require('../../data/en-US/message.json'),
+  'ja': messageJa,
+  'en-US': messageEnUS,
 };
 
 const PRESET_USERS = {
-  'ja': require('../../data/ja/user.json'),
-  'en-US': require('../../data/en-US/user.json'),
+  'ja': userJa,
+  'en-US': userEnUS,
 };
 
 const CURRENCY_FORMATTER = {
