@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
 
     <title>HOTEL PLANISPHERE - テスト自動化練習サイト</title>
+    <!-- Inject analytics tags -->
   </head>
   <body class="bg-light">
     <h1 class="text-center text-uppercase d-none d-lg-block display-3 my-5">Hotel Planisphere</h1>
@@ -52,7 +53,6 @@
       <div class="row bg-white my-3 px-3 shadow-sm">
         <div class="col">
           <h2 class="my-4">このサイトはテスト自動化の学習用の練習サイトです。</h2>
-          </p>
           <p>Seleniumなどのブラウザテスト自動化を学習したい方が、実際にテストスクリプトを実行するための<strong>テスト対象サイト</strong>として作成されています。</p>
           <p>書籍やブログなどでのサンプルやデモにもお使いいただけます。ライセンスは<a href="https://github.com/takeyaqa/hotel-example-site/blob/master/LICENSE">MIT License</a>です。</p>
           <p>自動テストの学習を目的として作成されていますが、テスト設計や技法の学習に使うことも可能です。</p>
@@ -79,30 +79,30 @@
           <h4 class="my-4">構成の詳細</h4>
           <div class="row">
             <div class="col-12 col-lg-4">
-              <h5 class ="my-2">ログイン画面</h5>
+              <h5 class="my-2">ログイン画面</h5>
               <p>シンプルなテキストインプットとボタンの画面です。ログイン情報はCookieに保存されます。会員登録画面で保存したユーザの他、登録済みのユーザ（下記）があります。</p>
             </div>
             <div class="col-12 col-lg-4">
-              <h5 class ="my-2">会員登録画面</h5>
+              <h5 class="my-2">会員登録画面</h5>
               <p>複数種類のインプットがある画面です。この画面で登録したユーザはLocal Storageに保存され、ログインに使用することができるようになります。</p>
             </div>
             <div class="col-12 col-lg-4">
-              <h5 class ="my-2">マイページ画面</h5>
+              <h5 class="my-2">マイページ画面</h5>
               <p>ログイン後に表示される画面です。登録したユーザ情報が表示され、確認に使うことができます。また、新規登録したユーザの場合アイコン画像の設定と退会（情報削除）ができます。</p>
             </div>
           </div>
           <hr>
           <div class="row">
             <div class="col-12 col-lg-4">
-              <h5 class ="my-2">宿泊プラン一覧画面</h5>
+              <h5 class="my-2">宿泊プラン一覧画面</h5>
               <p>「宿泊予約」のメニューから表示できる画面です。表示されるプランは「未ログイン」「一般会員」「プレミアム会員」によって変わります。プラン情報はAjaxで非同期に読み込まれます（トップの一つを除く）。</p>
             </div>
             <div class="col-12 col-lg-4">
-              <h5 class ="my-2">宿泊予約画面</h5>
+              <h5 class="my-2">宿泊予約画面</h5>
               <p>宿泊の予約を行う画面です。新規ウィンドウで開きます。複数種類のインプットのほか、合計金額が入力内容で動的に計算され表示されます。基本料および宿泊数・人数の許容値は選択したプランで変わります。</p>
             </div>
             <div class="col-12 col-lg-4">
-              <h5 class ="my-2">宿泊予約確認画面</h5>
+              <h5 class="my-2">宿泊予約確認画面</h5>
               <p>宿泊予約の確定後に表示される画面です。予約で入力した内容の確認表示があります。また、アニメーション付きのダイアログが表示されます。</p>
             </div>
           </div>
@@ -146,6 +146,7 @@
                 <td><code>pass-pass</code></td>
                 <td>一般会員</td>
               </tr>
+            </tbody>
           </table>
         </div>
       </div>

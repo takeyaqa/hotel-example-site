@@ -39,6 +39,9 @@ jobs:
         run: npm ci
       - name: Build project
         run: npm run build
+      - name: Inject analytics tags
+        if: ${{ env.INJECT_ANALYTICS == 'true' }}
+        run: node .github/workflows/inject_analytics.js
       - name: Remove unnecessary files
         run: |
           rm -rf .devcontainer
