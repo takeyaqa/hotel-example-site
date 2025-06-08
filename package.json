@@ -16,7 +16,7 @@
   "author": "Takeshi Kishi",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "4.6.2",
+    "bootstrap": "5.0.0",
     "jquery": "3.7.1",
     "jquery-ui": "1.14.1"
   },
