@@ -104,7 +104,7 @@ export function setLoginNavbar() {
   $('#login-holder').removeClass('d-block').addClass('d-none');
   $('#mypage-holder').removeClass('d-none').addClass('d-block');
   $('#logout-holder').removeClass('d-none').addClass('d-block');
-  $('#logout-form').submit(function() {
+  $('#logout-form').on('submit', function() {
     logout();
   });
 }

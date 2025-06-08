@@ -8,7 +8,7 @@ if (session) {
 }
 $(function() {
   // Setup submit event
-  $('#signup-form').submit(function() {
+  $('#signup-form').on('submit', function() {
     resetCustomValidity($(this).find('input'));
 
     // Check exsists user
