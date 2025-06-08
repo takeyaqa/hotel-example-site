@@ -37,11 +37,27 @@ This site provides mocked booking hotel feature. It has input forms to log in, s
 
 ### Running Server
 
-For development, you can serve this site locally using any static file server.
+For development, you can serve this site locally using webpack.
 
-#### Example: Using Python (if Python 3 is installed)
+#### Prerequisites
+
+Make sure you have Node.js installed, then install dependencies:
 ```bash
-python -m http.server 8080
+npm install
+```
+
+#### Build and Start Server
+
+First, build the project:
+```bash
+npm run build
+```
+
+This will create a `dist` folder with the built assets.
+
+Then start the webpack development server:
+```bash
+npm run start
 ```
 
 After starting the server, open your browser and navigate to:
