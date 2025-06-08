@@ -48,14 +48,14 @@ $(function() {
     }).appendTo('#icon-holder');
   }
 
-  $('#logout-form').submit(function() {
+  $('#logout-form').on('submit', function() {
     logout();
   });
 
   if (!user.preset) {
     $('#icon-link').removeClass('disabled').removeAttr('tabindex').removeAttr('aria-disabled')
     $('#delete-form > button').prop('disabled', false);
-    $('#delete-form').submit(function() {
+    $('#delete-form').on('submit', function() {
       if (confirm(t('user.deleteConfirm'))) {
         logout();
         localStorage.removeItem(user.email);

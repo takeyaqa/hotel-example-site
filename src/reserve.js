@@ -74,12 +74,12 @@ $(function() {
     maxDate: 90,
     minDate: 1,
     onSelect: function() {
-      $(this).change();
+      $(this).trigger('change');
     },
   });
 
   // Setup contact select
-  $('#contact').change(function() {
+  $('#contact').on('change', function() {
     if ($(this).val() === 'no') {
       $('#email').prop('disabled', true)
                  .prop('required', false)
@@ -105,7 +105,7 @@ $(function() {
   });
 
   // Setup calc total function    
-  $('.needs-calc').change(function() {
+  $('.needs-calc').on('change', function() {
     resetCustomValidity($(this));
     if ($(this).attr('id') === 'date' && $("#date")[0].checkValidity()) {
       const dateMessage = validateDateInput(parseDate($('#date').val()));
@@ -126,7 +126,7 @@ $(function() {
   });
 
   // Setup submit event
-  $('#reserve-form').submit(function() {
+  $('#reserve-form').on('submit', function() {
     resetCustomValidity($(this).find('input'));
     const dateValue = parseDate($('#date').val());
     if ($('#date')[0].checkValidity()) {

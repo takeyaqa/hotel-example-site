@@ -17,7 +17,7 @@ if (user.preset) {
 
 $(function() {
   // set file event
-  $('#icon').change(function() {
+  $('#icon').on('change', function() {
     this.setCustomValidity('');
     const file = this.files[0];
     $('#color').val('#ffffff');
@@ -59,19 +59,19 @@ $(function() {
 
     // set zoom input
     $('#zoom').prop('disabled', false);
-    $('#zoom').change(function() {
+    $('#zoom').on('change', function() {
       $('#icon-img').width(parseInt($(this).val(), 10))
                     .height(parseInt($(this).val(), 10));
     });
 
     // set color input
     $('#color').prop('disabled', false);
-    $('#color').change(function() {
+    $('#color').on('change', function() {
       $('#icon-img').css('backgroundColor', $(this).val());
     });
   });
 
-  $('#icon-form').submit(function() {
+  $('#icon-form').on('submit', function() {
     if (this.checkValidity()) {
       const file = $('#icon').prop('files')[0];
       const reader = new FileReader();
@@ -93,7 +93,7 @@ $(function() {
     }
   });
 
-  $('#logout-form').submit(function() {
+  $('#logout-form').on('submit', function() {
     logout();
   });
 });
