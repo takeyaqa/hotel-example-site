@@ -41,23 +41,23 @@ For development, you can serve this site locally using webpack.
 
 #### Prerequisites
 
-Make sure you have Node.js installed, then install dependencies:
+Make sure you have Node.js and pnpm installed, then install dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 #### Build and Start Server
 
 First, build the project:
 ```bash
-npm run build
+pnpm run build
 ```
 
 This will create a `dist` folder with the built assets.
 
 Then start the webpack development server:
 ```bash
-npm run start
+pnpm run start
 ```
 
 After starting the server, open your browser and navigate to:
