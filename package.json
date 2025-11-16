@@ -1,6 +1,7 @@
 {
   "name": "hotel-example-site",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "webpack",
     "start": "webpack serve"
