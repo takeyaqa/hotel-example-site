@@ -30,15 +30,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 'lts/*'
-          cache: 'npm'
+          node-version: 24
+          cache: 'pnpm'
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install
       - name: Build project
-        run: npm run build
+        run: pnpm run build
       - name: Inject analytics tags
         if: ${{ vars.INJECT_ANALYTICS == 'true' }}
         run: node .github/workflows/inject_analytics.js
@@ -49,8 +53,8 @@ jobs:
           rm -rf src
           rm -rf test
           rm LICENSE
-          rm package-lock.json
           rm package.json
+          rm pnpm-lock.yaml
           rm README.md
           rm webpack.config.js
       - name: Setup Pages
