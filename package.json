@@ -1,20 +1,10 @@
 {
   "name": "hotel-example-site",
-  "version": "4.0.0",
   "private": true,
-  "description": "Demo site for learning test automation (hotel reservation)",
   "scripts": {
     "build": "webpack",
     "start": "webpack serve"
   },
-  "keywords": [
-    "learn-to-code",
-    "testing",
-    "automation",
-    "test-automation"
-  ],
-  "author": "Takeshi Kishi",
-  "license": "MIT",
   "dependencies": {
     "bootstrap": "4.6.2",
     "jquery": "3.7.1",
