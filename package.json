@@ -34,7 +34,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": ">=10"
+      "version": ">=10 <11"
     }
   }
 }
