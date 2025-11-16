@@ -26,5 +26,15 @@
     "webpack": "5.102.1",
     "webpack-cli": "6.0.1",
     "webpack-dev-server": "5.2.2"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": ">=24 <25"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=10"
+    }
   }
 }
