@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    cooldown:
+      default-days: 1
     commit-message:
       prefix: "build"
       include: "scope"
@@ -14,13 +16,8 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    cooldown:
+      default-days: 1
     commit-message:
       prefix: "ci"
-      include: "scope"
-  - package-ecosystem: "devcontainers"
-    directory: "/"
-    schedule:
-      interval: "monthly"
-    commit-message:
-      prefix: "chore"
       include: "scope"
