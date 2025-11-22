@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
         with:
           version: 10
       - name: Setup Node.js
@@ -48,13 +48,13 @@ jobs:
         run: node .github/workflows/inject_analytics.js
       - name: Remove unnecessary files
         run: |
-          rm -rf .devcontainer
           rm -rf node_modules
           rm -rf src
           rm -rf test
           rm LICENSE
           rm package.json
           rm pnpm-lock.yaml
+          rm pnpm-workspace.yaml
           rm README.md
           rm webpack.config.js
       - name: Setup Pages
