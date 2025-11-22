@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * 指定されたディレクトリからHTMLファイルを再帰的に検索する
- * @param {string} dir - 検索するディレクトリパス
- * @param {string[]} htmlFiles - HTMLファイルパスを格納する配列
- * @returns {string[]} HTMLファイルパスの配列
+ * Recursively search for HTML files from the specified directory
+ * @param {string} dir - Directory path to search
+ * @param {string[]} htmlFiles - Array to store HTML file paths
+ * @returns {string[]} Array of HTML file paths
  */
 function findHtmlFiles(dir, htmlFiles = []) {
   const files = fs.readdirSync(dir);
@@ -15,10 +15,10 @@ function findHtmlFiles(dir, htmlFiles = []) {
     const stat = fs.statSync(filePath);
     
     if (stat.isDirectory()) {
-      // ディレクトリの場合は再帰的に検索
+      // Recursively search if the entry is a directory
       findHtmlFiles(filePath, htmlFiles);
     } else if (stat.isFile() && path.extname(file).toLowerCase() === '.html') {
-      // HTMLファイルの場合は配列に追加
+      // Add to the array if the entry is an HTML file
       htmlFiles.push(filePath);
     }
   }
@@ -27,9 +27,9 @@ function findHtmlFiles(dir, htmlFiles = []) {
 }
 
 /**
- * HTMLファイルを読み込む
- * @param {string} filePath - HTMLファイルのパス
- * @returns {Object|null} { filePath, content } を含むオブジェクト
+ * Load HTML file
+ * @param {string} filePath - Path to the HTML file
+ * @returns {Object|null} Object containing { filePath, content }
  */
 function loadHtmlFile(filePath) {
   try {
@@ -45,38 +45,38 @@ function loadHtmlFile(filePath) {
 }
 
 /**
- * HTMLファイルにアナリティクススクリプトを注入する（文字列置換）
- * @param {Object} loadedFile - loadHtmlFile()で読み込まれたファイルオブジェクト
- * @returns {string} 更新されたHTMLコンテンツ
+ * Inject an analytics script into an HTML file (string replacement)
+ * @param {Object} loadedFile - File object loaded by loadHtmlFile()
+ * @returns {string} Updated HTML content
  */
 function injectAnalyticsScript(loadedFile) {
   const { filePath, content } = loadedFile;
   
-  // 注入するスクリプトタグ
+  // Script tag to inject
   const analyticsScript = '<script defer data-domain="hotel-example-site.takeyaqa.dev" src="https://plausible.io/js/script.js"></script>';
   
-  // コメントプレースホルダーを検索
+  // Search for the comment placeholder
   const placeholder = '<!-- Inject analytics tags -->';
   
   if (!content.includes(placeholder)) {
     return content;
   }
   
-  // 既存のアナリティクススクリプトがあるかチェック
+  // Check for an existing analytics script
   if (content.includes('data-domain="hotel-example-site.takeyaqa.dev"')) {
     return content;
   }
   
-  // プレースホルダーをスクリプトタグに置換
+  // Replace the placeholder with the script tag
   const updatedContent = content.replace(placeholder, analyticsScript);
   
   return updatedContent;
 }
 
 /**
- * HTMLファイルを上書き保存する
- * @param {string} filePath - ファイルパス
- * @param {string} content - 新しいHTMLコンテンツ
+ * Overwrite the HTML file
+ * @param {string} filePath - File path
+ * @param {string} content - New HTML content
  */
 function saveHtmlFile(filePath, content) {
   try {
@@ -87,9 +87,9 @@ function saveHtmlFile(filePath, content) {
 }
 
 /**
- * 指定されたディレクトリからHTMLファイルを再帰的に読み込む
- * @param {string} targetDir - 対象ディレクトリ
- * @returns {Object[]} 読み込まれたHTMLファイルの配列
+ * Recursively load HTML files from the specified directory
+ * @param {string} targetDir - Target directory
+ * @returns {Object[]} Array of loaded HTML files
  */
 function loadHtmlFilesRecursively(targetDir) {
   if (!fs.existsSync(targetDir)) {
@@ -110,13 +110,13 @@ function loadHtmlFilesRecursively(targetDir) {
 }
 
 /**
- * メイン処理
+ * Main process
  */
 function main() {
   const targetDirectories = ['ja', 'en-US'];
   const allLoadedFiles = [];
   
-  // トップレベルのindex.htmlを処理
+  // Process the top-level index.html
   const topLevelIndexPath = 'index.html';
   if (fs.existsSync(topLevelIndexPath)) {
     const loadedFile = loadHtmlFile(topLevelIndexPath);
@@ -125,13 +125,13 @@ function main() {
     }
   }
   
-  // HTMLファイルを読み込み
+  // Load HTML files
   for (const dir of targetDirectories) {
     const loadedFiles = loadHtmlFilesRecursively(dir);
     allLoadedFiles.push(...loadedFiles);
   }
   
-  // アナリティクススクリプトを注入して保存
+  // Inject the analytics script and save
   for (const loadedFile of allLoadedFiles) {
     const originalContent = loadedFile.content;
     const updatedContent = injectAnalyticsScript(loadedFile);
@@ -142,5 +142,5 @@ function main() {
   }
 }
 
-// スクリプトを実行
+// Execute the script
 main();
