@@ -120,6 +120,8 @@ test.describe('マイページ', () => {
       page,
     }) => {
       await page.getByRole('button', { name: 'アイコン設定' }).click();
+      await expect(page).toHaveTitle(/アイコン設定/);
+
       await page
         .getByLabel('アイコン画像')
         .setInputFiles(path.join(__dirname, '..', 'assets', 'dummy.txt'));
@@ -134,6 +136,8 @@ test.describe('マイページ', () => {
       page,
     }) => {
       await page.getByRole('button', { name: 'アイコン設定' }).click();
+      await expect(page).toHaveTitle(/アイコン設定/);
+
       await page
         .getByLabel('アイコン画像')
         .setInputFiles(path.join(__dirname, '..', 'assets', '240x240_12.png'));
@@ -146,6 +150,8 @@ test.describe('マイページ', () => {
 
     test('設定したアイコンがマイページに表示されること', async ({ page }) => {
       await page.getByRole('button', { name: 'アイコン設定' }).click();
+      await expect(page).toHaveTitle(/アイコン設定/);
+
       await page
         .getByLabel('アイコン画像')
         .setInputFiles(path.join(__dirname, '..', 'assets', '240x240_01.png'));
@@ -153,6 +159,7 @@ test.describe('マイページ', () => {
       await page.getByLabel('拡大・縮小').fill('80');
       await page.getByLabel('枠線の色').fill('#000000');
       await page.getByRole('button', { name: '確定' }).click();
+      await expect(page).toHaveTitle(/マイページ/);
 
       await expect(page.locator('#icon-holder > img')).toBeVisible();
       await expect(page.locator('#icon-holder > img')).toHaveCSS(
