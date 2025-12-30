@@ -31,12 +31,12 @@ jobs:
         if: github.event_name == 'pull_request'
         run: pnpm run test
         env:
-          USE_WEB_SERVER: 'true'
+          USE_DEPLOYED_SITE: 'false'
       - name: Run Playwright tests for deployed site
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: pnpm run test
         env:
-          USE_WEB_SERVER: 'false'
+          USE_DEPLOYED_SITE: 'true'
       - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:
