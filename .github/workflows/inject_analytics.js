@@ -51,9 +51,22 @@ function loadHtmlFile(filePath) {
  */
 function injectAnalyticsScript(loadedFile) {
   const { filePath, content } = loadedFile;
-  
+
+  if (!process.env.PA_ANALYTICS_ID) {
+    return content;
+  }
+  const paAnalyticsId = process.env.PA_ANALYTICS_ID;
+  if (!/^pa-[a-zA-Z0-9]+$/.test(paAnalyticsId)) {
+    throw new Error('Invalid PA_ANALYTICS_ID format');
+  }
+
   // Script tag to inject
-  const analyticsScript = '<script defer data-domain="hotel-example-site.takeyaqa.dev" src="https://plausible.io/js/script.js"></script>';
+  const analyticsScript = `<!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/${paAnalyticsId}.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>`;
   
   // Search for the comment placeholder
   const placeholder = '<!-- Inject analytics tags -->';
@@ -63,7 +76,7 @@ function injectAnalyticsScript(loadedFile) {
   }
   
   // Check for an existing analytics script
-  if (content.includes('data-domain="hotel-example-site.takeyaqa.dev"')) {
+  if (content.includes('<!-- Privacy-friendly analytics by Plausible -->')) {
     return content;
   }
   
