@@ -26,6 +26,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build project
+        if: github.event_name == 'pull_request'
         run: pnpm run build
       - name: Run Playwright tests for local server
         if: github.event_name == 'pull_request'
