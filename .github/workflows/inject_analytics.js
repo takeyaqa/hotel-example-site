@@ -56,7 +56,7 @@ function injectAnalyticsScript(loadedFile) {
     return content;
   }
   const paAnalyticsId = process.env.PA_ANALYTICS_ID;
-  if (!/^pa\-[a-zA-Z0-9]+$/.test(paAnalyticsId)) {
+  if (!/^pa-[a-zA-Z0-9]+$/.test(paAnalyticsId)) {
     throw new Error('Invalid PA_ANALYTICS_ID format');
   }
 
