@@ -1,7 +1,6 @@
 # hotel-example-site
 
-[![selenium4-java-en-us](https://github.com/takeyaqa/hotel-example-selenium4-java-en-us/actions/workflows/test.yml/badge.svg)](https://github.com/takeyaqa/hotel-example-selenium4-java-en-us/actions/workflows/test.yml)
-[![selenium4-java-ja](https://github.com/takeyaqa/hotel-example-selenium4-java-ja/actions/workflows/test.yml/badge.svg)](https://github.com/takeyaqa/hotel-example-selenium4-java-ja/actions/workflows/test.yml)
+[![Playwright Tests](https://github.com/takeyaqa/hotel-example-site/actions/workflows/playwright.yml/badge.svg)](https://github.com/takeyaqa/hotel-example-site/actions/workflows/playwright.yml)
 
 ---
 
