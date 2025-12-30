@@ -4,7 +4,10 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui"
   },
   "dependencies": {
     "bootstrap": "4.6.2",
@@ -12,6 +15,8 @@
     "jquery-ui": "1.14.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
     "copy-webpack-plugin": "13.0.1",
     "terser-webpack-plugin": "5.3.14",
     "webpack": "5.102.1",
