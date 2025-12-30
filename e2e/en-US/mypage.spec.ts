@@ -176,8 +176,8 @@ test.describe('MyPage', () => {
     });
 
     test('it should delete new user', async ({ page }) => {
-      page.once('dialog', async (dialog) => {
-        let count = 0;
+      let count = 0;
+      page.on('dialog', async (dialog) => {
         if (count === 0) {
           expect(dialog.message()).toBe(
             'If you cancel your membership, all information will be deleted.\nDo you wish to proceed?',
@@ -189,6 +189,7 @@ test.describe('MyPage', () => {
             'The process has been completed. Thank you for your service.',
           );
           await dialog.accept();
+          count++;
         }
       });
       await page.getByRole('button', { name: 'Delete Account' }).click();

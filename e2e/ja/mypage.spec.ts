@@ -173,8 +173,8 @@ test.describe('マイページ', () => {
     });
 
     test('新規登録したユーザが削除できること', async ({ page }) => {
-      page.once('dialog', async (dialog) => {
-        let count = 0;
+      let count = 0;
+      page.on('dialog', async (dialog) => {
         if (count === 0) {
           expect(dialog.message()).toBe(
             '退会すると全ての情報が削除されます。\nよろしいですか？',
@@ -186,6 +186,7 @@ test.describe('マイページ', () => {
             '退会処理を完了しました。ご利用ありがとうございました。',
           );
           await dialog.accept();
+          count++;
         }
       });
       await page.getByRole('button', { name: '退会する' }).click();
