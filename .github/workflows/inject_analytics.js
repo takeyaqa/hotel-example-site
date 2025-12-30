@@ -53,10 +53,13 @@ function injectAnalyticsScript(loadedFile) {
   const { filePath, content } = loadedFile;
 
   if (!process.env.PA_ANALYTICS_ID) {
-    return;
+    return content;
   }
   const paAnalyticsId = process.env.PA_ANALYTICS_ID;
-  
+  if (!/^pa\-[a-zA-Z0-9]+$/.test(paAnalyticsId)) {
+    throw new Error('Invalid PA_ANALYTICS_ID format');
+  }
+
   // Script tag to inject
   const analyticsScript = `<!-- Privacy-friendly analytics by Plausible -->
     <script async src="https://plausible.io/js/${paAnalyticsId}.js"></script>
