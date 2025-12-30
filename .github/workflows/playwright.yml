@@ -1,7 +1,8 @@
 name: Playwright Tests
 on:
-  push:
-    branches-ignore: [main]
+  pull_request:
+  schedule:
+    - cron: '18 18 * * *'
   workflow_dispatch:
 
 jobs:
@@ -26,10 +27,16 @@ jobs:
         run: pnpm install
       - name: Build project
         run: pnpm run build
-      - name: Run Playwright tests
+      - name: Run Playwright tests for local server
+        if: github.event_name == 'pull_request'
         run: pnpm run test
         env:
           USE_WEB_SERVER: 'true'
+      - name: Run Playwright tests for deployed site
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: pnpm run test
+        env:
+          USE_WEB_SERVER: 'false'
       - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:
