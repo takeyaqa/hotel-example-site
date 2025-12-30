@@ -9,8 +9,6 @@ import { defineConfig, devices } from '@playwright/test';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const useWebServer = process.env.USE_WEB_SERVER === 'true';
-console.log(`process.env.USE_WEB_SERVER: ${process.env.USE_WEB_SERVER}`);
-console.log(`Using web server: ${useWebServer}`);
 
 /**
  * See https://playwright.dev/docs/test-configuration.
