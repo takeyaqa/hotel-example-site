@@ -44,7 +44,9 @@ jobs:
       - name: Build project
         run: pnpm run build
       - name: Inject analytics tags
-        if: ${{ vars.INJECT_ANALYTICS == 'true' }}
+        if: ${{ env.PA_ANALYTICS_ID }}
+        env:
+          PA_ANALYTICS_ID: ${{ env.PA_ANALYTICS_ID }}
         run: node .github/workflows/inject_analytics.js
       - name: Remove unnecessary files
         run: |
