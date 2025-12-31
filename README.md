@@ -109,7 +109,7 @@ pnpm run test:report
 
 ### Legacy (Archived)
 
-The repositories below contain legacy example codes that is no longer maintained and is provided for reference only.
+The repositories below contain legacy example code that is no longer maintained and is provided for reference only.
 They are archived, not actively supported, and may not work with current versions.
 
 The only actively maintained test examples for this project are the Playwright tests included in this repository.
@@ -118,7 +118,7 @@ The only actively maintained test examples for this project are the Playwright t
 
 - [Java, Selenium 4](https://github.com/takeyaqa/hotel-example-selenium4-java-en-us)
 - [Java, Selenide](https://github.com/takeyaqa/hotel-example-selenide-en-us)
-- [Ruby, Capybara](https://github.com/takeyaqa/hotel-example-webdriverio-en-us)
+- [Ruby, Capybara](https://github.com/takeyaqa/hotel-example-capybara-en-us)
 - [JavaScript, WebdriverIO](https://github.com/takeyaqa/hotel-example-webdriverio-en-us)
 - [Java, Selenium 3](https://github.com/takeyaqa/hotel-example-selenium3-java-en-us)
 
