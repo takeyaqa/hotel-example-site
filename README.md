@@ -107,6 +107,28 @@ View the latest HTML report after a run:
 pnpm run test:report
 ```
 
+### Legacy (Archived)
+
+The repositories below contain legacy example code that is no longer maintained and is provided for reference only.
+They are archived, not actively supported, and may not work with current versions.
+
+The only actively maintained test examples for this project are the Playwright tests included in this repository.
+
+#### English Examples
+
+- [Java, Selenium 4](https://github.com/takeyaqa/hotel-example-selenium4-java-en-us)
+- [Java, Selenide](https://github.com/takeyaqa/hotel-example-selenide-en-us)
+- [Ruby, Capybara](https://github.com/takeyaqa/hotel-example-capybara-en-us)
+- [JavaScript, WebdriverIO](https://github.com/takeyaqa/hotel-example-webdriverio-en-us)
+- [Java, Selenium 3](https://github.com/takeyaqa/hotel-example-selenium3-java-en-us)
+
+#### Japanese Examples
+
+- [Java, Selenium 4](https://github.com/takeyaqa/hotel-example-selenium4-java-ja)
+- [Java, Selenide](https://github.com/takeyaqa/hotel-example-selenide-ja)
+- [Ruby, Capybara](https://github.com/takeyaqa/hotel-example-capybara-ja)
+- [JavaScript, WebdriverIO](https://github.com/takeyaqa/hotel-example-webdriverio-ja)
+- [Java, Selenium 3](https://github.com/takeyaqa/hotel-example-selenium3-java-ja)
 
 ### Changelog
 
