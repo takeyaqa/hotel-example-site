@@ -66,6 +66,25 @@ After starting the server, open your browser and navigate to:
 - `http://localhost:8080/en-US/` for the English version
 
 
+### Running Playwight Test
+
+This project provides Playwright E2E test as example.
+
+#### Prerequisites
+
+Make sure you have Node.js and pnpm installed, then install dependencies:
+```bash
+pnpm install
+pnpm exec playwight install --with-deps
+```
+
+#### Run Test
+
+```bash
+pnpm run test
+```
+
+
 ### Changelog
 
 <https://github.com/takeyaqa/hotel-example-site/releases>
