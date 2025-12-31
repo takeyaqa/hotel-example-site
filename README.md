@@ -66,22 +66,45 @@ After starting the server, open your browser and navigate to:
 - `http://localhost:8080/en-US/` for the English version
 
 
-### Running Playwight Test
+### Running Playwright Tests
 
-This project provides Playwright E2E test as example.
+This project provides Playwright E2E tests as an example.
 
 #### Prerequisites
 
-Make sure you have Node.js and pnpm installed, then install dependencies:
+Make sure you have Node.js and pnpm installed, then install dependencies and browser binaries:
 ```bash
 pnpm install
-pnpm exec playwight install --with-deps
+pnpm exec playwright install --with-deps
 ```
 
-#### Run Test
+By default, tests run against `http://localhost:8080` and the Playwright test runner will start the webpack dev server for you. If you want to run tests against the deployed site instead, set the environment variable and skip starting the local server:
+```bash
+USE_DEPLOYED_SITE=true pnpm run test
+```
 
+If you prefer to start the local server yourself (for example to keep it running between test invocations), start it in another terminal with `pnpm run start`, then run the Playwright tests; they will reuse the existing server.
+
+#### Run Tests
+
+Headless (default):
 ```bash
 pnpm run test
+```
+
+Headed mode (visible browser):
+```bash
+pnpm run test:headed
+```
+
+Interactive test runner UI:
+```bash
+pnpm run test:ui
+```
+
+View the latest HTML report after a run:
+```bash
+pnpm run test:report
 ```
 
 
