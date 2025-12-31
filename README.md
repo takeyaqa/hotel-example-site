@@ -7,7 +7,7 @@
 ## Domain Migration Notice
 
 > [!IMPORTANT]
-> This website has moved to a new domain, [https://hotel-example-site.takeyaqa.dev/](https://hotel-example-site.takeyaqa.dev/), as of December 1, 2024.
+> This website has moved to a new domain, <https://hotel-example-site.takeyaqa.dev/>, as of December 1, 2024.
 > 
 > **Redirects from hotel.testplanisphere.dev will end on December 31, 2025.**
 
@@ -17,7 +17,7 @@
 
 This site aims to learn browser automation with running automation scripts against this site as the system under test.
 
-You can refer to this site from any places such as books and blogs under [MIT License](https://github.com/takeyaqa/hotel-example-site/blob/master/LICENSE).
+You can refer to this site from any places such as books and blogs under [MIT License](./LICENSE).
 
 It is made for learning test automation, but you can also use it to learn test design and technique.
 
@@ -62,8 +62,8 @@ pnpm run start
 ```
 
 After starting the server, open your browser and navigate to:
-- `http://localhost:8080/ja/` for the Japanese version
 - `http://localhost:8080/en-US/` for the English version
+- `http://localhost:8080/ja/` for the Japanese version
 
 
 ### Running Playwright Tests
