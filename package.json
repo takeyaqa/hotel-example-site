@@ -29,9 +29,11 @@
       "name": "node",
       "version": ">=24 <25"
     },
-    "packageManager": {
-      "name": "pnpm",
-      "version": ">=10 <11"
-    }
+    "packageManager": [
+      {
+        "name": "pnpm",
+        "version": ">=10 <11"
+      }
+    ]
   }
 }
