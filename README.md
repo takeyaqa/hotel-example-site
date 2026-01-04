@@ -9,7 +9,7 @@
 > [!IMPORTANT]
 > This website has moved to a new domain, <https://hotel-example-site.takeyaqa.dev/>, as of December 1, 2024.
 > 
-> **Redirects from hotel.testplanisphere.dev will end on December 31, 2025.**
+> **Redirects from hotel.testplanisphere.dev ended on December 31, 2025.**
 
 ---
 
