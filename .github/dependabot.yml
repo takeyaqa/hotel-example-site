@@ -9,6 +9,14 @@ updates:
     commit-message:
       prefix: "build"
       include: "scope"
+    groups:
+      webpack:
+        patterns:
+          - "copy-webpack-plugin"
+          - "terser-webpack-plugin"
+          - "webpack"
+          - "webpack-cli"
+          - "webpack-dev-server"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
