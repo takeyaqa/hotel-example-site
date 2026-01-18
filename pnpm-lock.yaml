@@ -27,6 +27,9 @@ importers:
       copy-webpack-plugin:
         specifier: 13.0.1
         version: 13.0.1(webpack@5.104.1)
+      prettier:
+        specifier: ^3.8.0
+        version: 3.8.0
       terser-webpack-plugin:
         specifier: 5.3.16
         version: 5.3.16(webpack@5.104.1)
@@ -1008,6 +1011,11 @@ packages:
   popper.js@1.16.1:
     resolution: {integrity: sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==}
     deprecated: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+
+  prettier@3.8.0:
+    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
+    engines: {node: '>=14'}
+    hasBin: true
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -2388,6 +2396,8 @@ snapshots:
       fsevents: 2.3.2
 
   popper.js@1.16.1: {}
+
+  prettier@3.8.0: {}
 
   process-nextick-args@2.0.1: {}
 

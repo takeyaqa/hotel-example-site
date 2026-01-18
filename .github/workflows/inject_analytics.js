@@ -9,11 +9,11 @@ const path = require('path');
  */
 function findHtmlFiles(dir, htmlFiles = []) {
   const files = fs.readdirSync(dir);
-  
+
   for (const file of files) {
     const filePath = path.join(dir, file);
     const stat = fs.statSync(filePath);
-    
+
     if (stat.isDirectory()) {
       // Recursively search if the entry is a directory
       findHtmlFiles(filePath, htmlFiles);
@@ -22,7 +22,7 @@ function findHtmlFiles(dir, htmlFiles = []) {
       htmlFiles.push(filePath);
     }
   }
-  
+
   return htmlFiles;
 }
 
@@ -34,10 +34,10 @@ function findHtmlFiles(dir, htmlFiles = []) {
 function loadHtmlFile(filePath) {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    
+
     return {
       filePath,
-      content
+      content,
     };
   } catch (error) {
     process.exit(1);
@@ -67,22 +67,22 @@ function injectAnalyticsScript(loadedFile) {
       window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
       plausible.init()
     </script>`;
-  
+
   // Search for the comment placeholder
   const placeholder = '<!-- Inject analytics tags -->';
-  
+
   if (!content.includes(placeholder)) {
     return content;
   }
-  
+
   // Check for an existing analytics script
   if (content.includes('<!-- Privacy-friendly analytics by Plausible -->')) {
     return content;
   }
-  
+
   // Replace the placeholder with the script tag
   const updatedContent = content.replace(placeholder, analyticsScript);
-  
+
   return updatedContent;
 }
 
@@ -108,17 +108,17 @@ function loadHtmlFilesRecursively(targetDir) {
   if (!fs.existsSync(targetDir)) {
     return [];
   }
-  
+
   const htmlFiles = findHtmlFiles(targetDir);
   const loadedFiles = [];
-  
+
   for (const filePath of htmlFiles) {
     const loadedFile = loadHtmlFile(filePath);
     if (loadedFile) {
       loadedFiles.push(loadedFile);
     }
   }
-  
+
   return loadedFiles;
 }
 
@@ -128,7 +128,7 @@ function loadHtmlFilesRecursively(targetDir) {
 function main() {
   const targetDirectories = ['ja', 'en-US'];
   const allLoadedFiles = [];
-  
+
   // Process the top-level index.html
   const topLevelIndexPath = 'index.html';
   if (fs.existsSync(topLevelIndexPath)) {
@@ -137,18 +137,18 @@ function main() {
       allLoadedFiles.push(loadedFile);
     }
   }
-  
+
   // Load HTML files
   for (const dir of targetDirectories) {
     const loadedFiles = loadHtmlFilesRecursively(dir);
     allLoadedFiles.push(...loadedFiles);
   }
-  
+
   // Inject the analytics script and save
   for (const loadedFile of allLoadedFiles) {
     const originalContent = loadedFile.content;
     const updatedContent = injectAnalyticsScript(loadedFile);
-    
+
     if (originalContent !== updatedContent) {
       saveHtmlFile(loadedFile.filePath, updatedContent);
     }

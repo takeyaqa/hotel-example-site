@@ -2,7 +2,7 @@ name: Playwright Tests
 on:
   pull_request:
   schedule:
-    - cron: '18 18 * * *'
+    - cron: "18 18 * * *"
   workflow_dispatch:
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: 'pnpm'
+          cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
       - name: Build project
@@ -32,12 +32,12 @@ jobs:
         if: github.event_name == 'pull_request'
         run: pnpm run test
         env:
-          USE_DEPLOYED_SITE: 'false'
+          USE_DEPLOYED_SITE: "false"
       - name: Run Playwright tests for deployed site
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         run: pnpm run test
         env:
-          USE_DEPLOYED_SITE: 'true'
+          USE_DEPLOYED_SITE: "true"
       - uses: actions/upload-artifact@v6
         if: ${{ !cancelled() }}
         with:

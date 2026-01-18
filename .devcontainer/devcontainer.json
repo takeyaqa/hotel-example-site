@@ -4,7 +4,11 @@
 
   "customizations": {
     "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
       "extensions": [
+        "esbenp.prettier-vscode",
         "github.vscode-github-actions",
         "ms-playwright.playwright"
       ]
