@@ -1,6 +1,6 @@
 const path = require('node:path');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require("terser-webpack-plugin");
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   mode: 'production',
@@ -24,13 +24,13 @@ module.exports = {
     minimizer: [
       new TerserPlugin({
         exclude: /vendor\/.+/,
-      })
+      }),
     ],
   },
   devtool: 'source-map',
   devServer: {
     host: '127.0.0.1',
-    static: '.'
+    static: '.',
   },
   plugins: [
     new CopyPlugin({
