@@ -15,7 +15,7 @@
   "dependencies": {
     "bootstrap": "4.6.2",
     "jquery": "3.7.1",
-    "jquery-ui": "1.14.1"
+    "jquery-ui": "1.14.2"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.1",

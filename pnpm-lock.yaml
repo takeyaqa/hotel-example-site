@@ -15,8 +15,8 @@ importers:
         specifier: 3.7.1
         version: 3.7.1
       jquery-ui:
-        specifier: 1.14.1
-        version: 1.14.1
+        specifier: 1.14.2
+        version: 1.14.2
     devDependencies:
       '@playwright/test':
         specifier: ^1.58.1
@@ -822,8 +822,8 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
 
-  jquery-ui@1.14.1:
-    resolution: {integrity: sha512-DhzsYH8VeIvOaxwi+B/2BCsFFT5EGjShdzOcm5DssWjtcpGWIMsn66rJciDA6jBruzNiLf1q0KvwMoX1uGNvnQ==}
+  jquery-ui@1.14.2:
+    resolution: {integrity: sha512-1gSl7PUjyipa2adSr780Ujk16faicrV7PjPPzPtvWk7tTqBnsqp67NNV9jZK2+BIxUPXWSnIUU/LBCgwgGZE+Q==}
 
   jquery@3.7.1:
     resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
@@ -2243,7 +2243,7 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jquery-ui@1.14.1:
+  jquery-ui@1.14.2:
     dependencies:
       jquery: 3.7.1
 
