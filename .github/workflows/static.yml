@@ -57,6 +57,7 @@ jobs:
           rm CODE_OF_CONDUCT.md
           rm CONTRIBUTING.md
           rm LICENSE
+          rm mise.toml
           rm package.json
           rm playwright.config.ts
           rm pnpm-lock.yaml
