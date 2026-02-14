@@ -1,6 +1,9 @@
 {
   "name": "Node.js & TypeScript",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:24",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
 
   "customizations": {
     "vscode": {
