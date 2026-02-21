@@ -18,7 +18,7 @@
     "jquery-ui": "1.14.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.1",
+    "@playwright/test": "^1.58.2",
     "@types/node": "^22.19.11",
     "copy-webpack-plugin": "13.0.1",
     "prettier": "^3.8.1",

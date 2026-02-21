@@ -19,7 +19,7 @@ importers:
         version: 1.14.2
     devDependencies:
       '@playwright/test':
-        specifier: ^1.58.1
+        specifier: ^1.58.2
         version: 1.58.2
       '@types/node':
         specifier: ^22.19.11
