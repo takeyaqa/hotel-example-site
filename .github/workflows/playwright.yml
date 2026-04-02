@@ -5,6 +5,9 @@ on:
     - cron: "18 18 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   test:
     timeout-minutes: 60
