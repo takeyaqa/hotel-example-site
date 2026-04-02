@@ -22,8 +22,8 @@
     "@types/node": "^22.19.13",
     "copy-webpack-plugin": "13.0.1",
     "prettier": "^3.8.1",
-    "terser-webpack-plugin": "5.3.16",
-    "webpack": "5.105.3",
+    "terser-webpack-plugin": "5.4.0",
+    "webpack": "5.105.4",
     "webpack-cli": "6.0.1",
     "webpack-dev-server": "5.2.3"
   },
