@@ -21,7 +21,7 @@
     "@playwright/test": "^1.59.1",
     "@types/node": "^24.12.2",
     "copy-webpack-plugin": "13.0.1",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.3",
     "terser-webpack-plugin": "5.5.0",
     "webpack": "5.106.2",
     "webpack-cli": "6.0.1",
