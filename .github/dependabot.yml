@@ -4,6 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    versioning-strategy: increase
     cooldown:
       default-days: 1
     open-pull-requests-limit: 10
