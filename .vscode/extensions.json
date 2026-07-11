@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "esbenp.prettier-vscode",
-    "github.vscode-github-actions",
-    "ms-playwright.playwright"
-  ]
+  "recommendations": ["github.vscode-github-actions", "ms-playwright.playwright", "oxc.oxc-vscode"]
 }
