@@ -5,8 +5,8 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack serve",
-    "fmt": "prettier --write .",
-    "fmt:check": "prettier --check .",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
@@ -21,25 +21,25 @@
     "@playwright/test": "^1.61.1",
     "@types/node": "^24.13.2",
     "copy-webpack-plugin": "14.0.0",
-    "prettier": "^3.9.4",
+    "oxfmt": "^0.58.0",
     "terser-webpack-plugin": "5.6.1",
     "webpack": "5.108.3",
     "webpack-cli": "7.1.0",
     "webpack-dev-server": "5.2.5"
   },
-  "engines": {
-    "node": "^24"
-  },
   "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "^24"
-    },
     "packageManager": [
       {
         "name": "pnpm",
         "version": "^10"
       }
-    ]
+    ],
+    "runtime": {
+      "name": "node",
+      "version": "^24"
+    }
+  },
+  "engines": {
+    "node": "^24"
   }
 }
