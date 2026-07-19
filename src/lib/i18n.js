@@ -1,7 +1,7 @@
-import messageJa from "../../data/ja/message.json";
-import messageEnUS from "../../data/en-US/message.json";
-import userJa from "../../data/ja/user.json";
-import userEnUS from "../../data/en-US/user.json";
+import messageJa from "../../data/ja/message.json" with { type: "json" };
+import messageEnUS from "../../data/en-US/message.json" with { type: "json" };
+import userJa from "../../data/ja/user.json" with { type: "json" };
+import userEnUS from "../../data/en-US/user.json" with { type: "json" };
 
 const MESSAGES = {
   ja: messageJa,
