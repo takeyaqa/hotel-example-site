@@ -5,9 +5,7 @@ test.describe('マイページ', () => {
   test.describe('定義済みユーザ', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/ja/');
-      await expect(page).toHaveTitle(
-        'HOTEL PLANISPHERE - テスト自動化練習サイト',
-      );
+      await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
       await page.getByRole('button', { name: 'ログイン' }).click();
       await expect(page).toHaveTitle(/ログイン/);
     });
@@ -37,9 +35,7 @@ test.describe('マイページ', () => {
       await expect(page.locator('#email')).toHaveText('sakura@example.com');
       await expect(page.locator('#username')).toHaveText('松本さくら');
       await expect(page.locator('#rank')).toHaveText('一般会員');
-      await expect(page.locator('#address')).toHaveText(
-        '神奈川県横浜市鶴見区大黒ふ頭',
-      );
+      await expect(page.locator('#address')).toHaveText('神奈川県横浜市鶴見区大黒ふ頭');
       await expect(page.locator('#tel')).toHaveText('未登録');
       await expect(page.locator('#gender')).toHaveText('女性');
       await expect(page.locator('#birthday')).toHaveText('2000年4月1日');
@@ -82,9 +78,7 @@ test.describe('マイページ', () => {
   test.describe('新規登録ユーザ', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/ja/');
-      await expect(page).toHaveTitle(
-        'HOTEL PLANISPHERE - テスト自動化練習サイト',
-      );
+      await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
       await page.getByRole('link', { name: '会員登録' }).click();
       await expect(page).toHaveTitle(/会員登録/);
       await page.getByLabel('メールアドレス 必須').fill('new-user@example.com');
@@ -100,9 +94,7 @@ test.describe('マイページ', () => {
       await page.getByRole('button', { name: '登録' }).click();
 
       await expect(page).toHaveTitle(/マイページ/);
-      await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-        'マイページ',
-      );
+      await expect(page.getByRole('heading', { level: 2 })).toHaveText('マイページ');
     });
 
     test('新規登録したユーザの情報が表示されること', async ({ page }) => {
@@ -116,9 +108,7 @@ test.describe('マイページ', () => {
       await expect(page.locator('#notification')).toHaveText('受け取らない');
     });
 
-    test('アイコン設定で画像以外のファイルはエラーとなること', async ({
-      page,
-    }) => {
+    test('アイコン設定で画像以外のファイルはエラーとなること', async ({ page }) => {
       await page.getByRole('button', { name: 'アイコン設定' }).click();
       await expect(page).toHaveTitle(/アイコン設定/);
 
@@ -132,9 +122,7 @@ test.describe('マイページ', () => {
       );
     });
 
-    test('アイコン設定で10KBを越えるファイルはエラーとなること', async ({
-      page,
-    }) => {
+    test('アイコン設定で10KBを越えるファイルはエラーとなること', async ({ page }) => {
       await page.getByRole('button', { name: 'アイコン設定' }).click();
       await expect(page).toHaveTitle(/アイコン設定/);
 
@@ -162,10 +150,7 @@ test.describe('マイページ', () => {
       await expect(page).toHaveTitle(/マイページ/);
 
       await expect(page.locator('#icon-holder > img')).toBeVisible();
-      await expect(page.locator('#icon-holder > img')).toHaveCSS(
-        'width',
-        '80px',
-      );
+      await expect(page.locator('#icon-holder > img')).toHaveCSS('width', '80px');
       await expect(page.locator('#icon-holder > img')).toHaveCSS(
         'background-color',
         'rgb(0, 0, 0)',
@@ -176,15 +161,11 @@ test.describe('マイページ', () => {
       let count = 0;
       page.on('dialog', async (dialog) => {
         if (count === 0) {
-          expect(dialog.message()).toBe(
-            '退会すると全ての情報が削除されます。\nよろしいですか？',
-          );
+          expect(dialog.message()).toBe('退会すると全ての情報が削除されます。\nよろしいですか？');
           await dialog.accept();
           count++;
         } else if (count === 1) {
-          expect(dialog.message()).toBe(
-            '退会処理を完了しました。ご利用ありがとうございました。',
-          );
+          expect(dialog.message()).toBe('退会処理を完了しました。ご利用ありがとうございました。');
           await dialog.accept();
           count++;
         }

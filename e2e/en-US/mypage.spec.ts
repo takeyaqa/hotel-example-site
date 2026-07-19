@@ -5,9 +5,7 @@ test.describe('MyPage', () => {
   test.describe('Preset Users', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/en-US/');
-      await expect(page).toHaveTitle(
-        'HOTEL PLANISPHERE - Website for Practice Test Automation',
-      );
+      await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
       await page.getByRole('button', { name: 'Login' }).click();
       await expect(page).toHaveTitle(/Login/);
     });
@@ -21,9 +19,7 @@ test.describe('MyPage', () => {
       await expect(page.locator('#email')).toHaveText('clark@example.com');
       await expect(page.locator('#username')).toHaveText('Clark Evans');
       await expect(page.locator('#rank')).toHaveText('Premium');
-      await expect(page.locator('#address')).toHaveText(
-        'Mountain View, California',
-      );
+      await expect(page.locator('#address')).toHaveText('Mountain View, California');
       await expect(page.locator('#tel')).toHaveText('01234567891');
       await expect(page.locator('#gender')).toHaveText('male');
       await expect(page.locator('#birthday')).toHaveText('not answered');
@@ -55,9 +51,7 @@ test.describe('MyPage', () => {
       await expect(page.locator('#email')).toHaveText('ororo@example.com');
       await expect(page.locator('#username')).toHaveText('Ororo Saldana');
       await expect(page.locator('#rank')).toHaveText('Premium');
-      await expect(page.locator('#address')).toHaveText(
-        'Cupertino, California',
-      );
+      await expect(page.locator('#address')).toHaveText('Cupertino, California');
       await expect(page.locator('#tel')).toHaveText('01212341234');
       await expect(page.locator('#gender')).toHaveText('other');
       await expect(page.locator('#birthday')).toHaveText('December 17, 1988');
@@ -84,16 +78,12 @@ test.describe('MyPage', () => {
   test.describe('New User', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/en-US/');
-      await expect(page).toHaveTitle(
-        'HOTEL PLANISPHERE - Website for Practice Test Automation',
-      );
+      await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
       await page.getByRole('link', { name: 'Sign up' }).click();
       await expect(page).toHaveTitle(/Sign up/);
       await page.getByLabel('Email Required').fill('new-user@example.com');
       await page.getByLabel('Password Required').fill('11111111');
-      await page
-        .getByLabel('Password (confirmation) Required')
-        .fill('11111111');
+      await page.getByLabel('Password (confirmation) Required').fill('11111111');
       await page.getByLabel('Name Required').fill('Jane Doe');
       await page.getByLabel('Membership', { exact: true }).check();
       await page.getByLabel('Address').fill('Detroit, Michigan');
@@ -103,9 +93,7 @@ test.describe('MyPage', () => {
       await page.getByLabel('Receive notification').setChecked(false);
       await page.getByRole('button', { name: 'Sign up' }).click();
       await expect(page).toHaveTitle(/MyPage/);
-      await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-        'MyPage',
-      );
+      await expect(page.getByRole('heading', { level: 2 })).toHaveText('MyPage');
     });
 
     test('It should be display new user', async ({ page }) => {
@@ -119,9 +107,7 @@ test.describe('MyPage', () => {
       await expect(page.locator('#notification')).toHaveText('not received');
     });
 
-    test('It should be an error selecting not image on icon setting', async ({
-      page,
-    }) => {
+    test('It should be an error selecting not image on icon setting', async ({ page }) => {
       await page.getByRole('button', { name: 'Icon Setting' }).click();
       await expect(page).toHaveTitle(/Setting Icon/);
 
@@ -135,9 +121,7 @@ test.describe('MyPage', () => {
       );
     });
 
-    test('It should be an error selecting over 10KB file on icon setting', async ({
-      page,
-    }) => {
+    test('It should be an error selecting over 10KB file on icon setting', async ({ page }) => {
       await page.getByRole('button', { name: 'Icon Setting' }).click();
       await expect(page).toHaveTitle(/Setting Icon/);
 
@@ -165,10 +149,7 @@ test.describe('MyPage', () => {
       await expect(page).toHaveTitle(/MyPage/);
 
       await expect(page.locator('#icon-holder > img')).toBeVisible();
-      await expect(page.locator('#icon-holder > img')).toHaveCSS(
-        'width',
-        '80px',
-      );
+      await expect(page.locator('#icon-holder > img')).toHaveCSS('width', '80px');
       await expect(page.locator('#icon-holder > img')).toHaveCSS(
         'background-color',
         'rgb(0, 0, 0)',
