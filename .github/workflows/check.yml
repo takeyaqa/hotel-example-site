@@ -6,6 +6,22 @@ permissions:
   contents: read
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
+        with:
+          version: 10
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: "package.json"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+      - run: pnpm run fmt:check
   build:
     runs-on: ubuntu-latest
     steps:
@@ -29,7 +45,7 @@ jobs:
           name: dist
           path: dist/
   test:
-    needs: build
+    needs: [check, build]
     timeout-minutes: 60
     strategy:
       fail-fast: false
