@@ -8,5 +8,5 @@
       }
     }
   ],
-  "ignorePatterns": ["/data", "src"]
+  "ignorePatterns": ["/data"]
 }

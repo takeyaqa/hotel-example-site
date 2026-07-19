@@ -1,6 +1,6 @@
-import {getUser, getSessionUser, logout, redirectToTop} from './lib/session.js';
-import {setValidityMessage} from './lib/validation.js';
-import {t} from './lib/messages.js';
+import { getUser, getSessionUser, logout, redirectToTop } from './lib/session.js';
+import { setValidityMessage } from './lib/validation.js';
+import { t } from './lib/messages.js';
 
 const session = getSessionUser();
 
@@ -15,9 +15,9 @@ if (user.preset) {
   redirectToTop();
 }
 
-$(function() {
+$(function () {
   // set file event
-  $('#icon').on('change', function() {
+  $('#icon').on('change', function () {
     this.setCustomValidity('');
     const file = this.files[0];
     $('#color').val('#ffffff');
@@ -27,7 +27,7 @@ $(function() {
       $('#zoom').prop('disabled', true);
       $('#color').prop('disabled', true);
       return;
-    } else if (file.size > (10 * 1024)) {
+    } else if (file.size > 10 * 1024) {
       $('#icon-holder').empty();
       $('#zoom').prop('disabled', true);
       $('#color').prop('disabled', true);
@@ -45,13 +45,13 @@ $(function() {
       return;
     }
     $('<img>', {
-      'id': 'icon-img',
-      'class': 'img-thumbnail',
-      'src': URL.createObjectURL(file),
-      'width': 100,
-      'height': 100,
-      'on': {
-        'load': function() {
+      id: 'icon-img',
+      class: 'img-thumbnail',
+      src: URL.createObjectURL(file),
+      width: 100,
+      height: 100,
+      on: {
+        load: function () {
           URL.revokeObjectURL(this.src);
         },
       },
@@ -59,32 +59,33 @@ $(function() {
 
     // set zoom input
     $('#zoom').prop('disabled', false);
-    $('#zoom').on('change', function() {
-      $('#icon-img').width(parseInt($(this).val(), 10))
-                    .height(parseInt($(this).val(), 10));
+    $('#zoom').on('change', function () {
+      $('#icon-img')
+        .width(parseInt($(this).val(), 10))
+        .height(parseInt($(this).val(), 10));
     });
 
     // set color input
     $('#color').prop('disabled', false);
-    $('#color').on('change', function() {
+    $('#color').on('change', function () {
       $('#icon-img').css('backgroundColor', $(this).val());
     });
   });
 
-  $('#icon-form').on('submit', function() {
+  $('#icon-form').on('submit', function () {
     if (this.checkValidity()) {
       const file = $('#icon').prop('files')[0];
       const reader = new FileReader();
-      reader.onload = function(event) {
+      reader.onload = function (event) {
         user.icon = {
-          'image': event.target.result,
-          'width': parseInt($('#zoom').val(), 10),
-          'height': parseInt($('#zoom').val(), 10),
-          'color': $('#color').val(),
+          image: event.target.result,
+          width: parseInt($('#zoom').val(), 10),
+          height: parseInt($('#zoom').val(), 10),
+          color: $('#color').val(),
         };
         localStorage.setItem(user.email, JSON.stringify(user));
       };
-      
+
       reader.readAsDataURL(file);
     } else {
       setValidityMessage($('#icon'));
@@ -93,7 +94,7 @@ $(function() {
     }
   });
 
-  $('#logout-form').on('submit', function() {
+  $('#logout-form').on('submit', function () {
     logout();
   });
 });

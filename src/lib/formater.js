@@ -1,4 +1,9 @@
-import {getCurrencyFormatter, getDateLongFormatter, getDateShortFormatter, getDateShortParser} from './i18n.js';
+import {
+  getCurrencyFormatter,
+  getDateLongFormatter,
+  getDateShortFormatter,
+  getDateShortParser,
+} from './i18n.js';
 
 /**
  * Format currency
@@ -52,7 +57,7 @@ function pad(number) {
 
 /**
  * Format date to ISO-format
- * @param {Date} date 
+ * @param {Date} date
  * @returns {string} string
  */
 export function formatDateISO(date) {

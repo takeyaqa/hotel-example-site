@@ -1,4 +1,4 @@
-import {getPresetUsers} from './i18n.js';
+import { getPresetUsers } from './i18n.js';
 
 /**
  * Get user data
@@ -34,7 +34,7 @@ export function getUser(email) {
  */
 export function isValidUser(email, password) {
   const user = getUser(email);
-  return (user && user.password === password);
+  return user && user.password === password;
 }
 
 /**
@@ -104,7 +104,7 @@ export function setLoginNavbar() {
   $('#login-holder').removeClass('d-block').addClass('d-none');
   $('#mypage-holder').removeClass('d-none').addClass('d-block');
   $('#logout-holder').removeClass('d-none').addClass('d-block');
-  $('#logout-form').on('submit', function() {
+  $('#logout-form').on('submit', function () {
     logout();
   });
 }
@@ -125,6 +125,6 @@ export function canDisplayPlan(plan, user) {
   if (plan.only === 'member') {
     return true;
   } else if (plan.only === 'premium') {
-    return (user.rank === 'premium');
+    return user.rank === 'premium';
   }
 }

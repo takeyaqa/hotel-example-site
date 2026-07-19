@@ -1,12 +1,12 @@
-import {formatCurrency, formatDateLong, parseDateISO} from './lib/formater.js';
-import {getAdditionalPlanPrice} from './lib/i18n.js';
-import {getTransactionId, deleteTransactionId, redirectToTop} from './lib/session.js';
-import {calcTotalBill} from './lib/billing.js';
-import {t} from './lib/messages.js';
+import { formatCurrency, formatDateLong, parseDateISO } from './lib/formater.js';
+import { getAdditionalPlanPrice } from './lib/i18n.js';
+import { getTransactionId, deleteTransactionId, redirectToTop } from './lib/session.js';
+import { calcTotalBill } from './lib/billing.js';
+import { t } from './lib/messages.js';
 
 history.replaceState(null, '', 'confirm.html');
 
-$(function() {
+$(function () {
   // load data
   const transactionId = getTransactionId();
   if (!transactionId) {
@@ -24,15 +24,29 @@ $(function() {
 
   // create contents
   const reserveDate = parseDateISO(reservation.date);
-  const endDate = new Date(reserveDate.getFullYear(), reserveDate.getMonth(), reserveDate.getDate() + reservation.term);
-  const totalBill = calcTotalBill(reservation.roomBill, reserveDate, reservation.term,
-      reservation.headCount, reservation.breakfast, reservation.earlyCheckIn, reservation.sightseeing, getAdditionalPlanPrice());
+  const endDate = new Date(
+    reserveDate.getFullYear(),
+    reserveDate.getMonth(),
+    reserveDate.getDate() + reservation.term,
+  );
+  const totalBill = calcTotalBill(
+    reservation.roomBill,
+    reserveDate,
+    reservation.term,
+    reservation.headCount,
+    reservation.breakfast,
+    reservation.earlyCheckIn,
+    reservation.sightseeing,
+    getAdditionalPlanPrice(),
+  );
 
   // set result
   $('#total-bill').text(t('reserve.totalBill', formatCurrency(totalBill)));
   $('#plan-name').text(reservation.planName);
   $('#plan-desc').text(t('reserve.planDescShort', formatCurrency(reservation.roomBill)));
-  $('#term').text(t('reserve.term', formatDateLong(reserveDate), formatDateLong(endDate), reservation.term));
+  $('#term').text(
+    t('reserve.term', formatDateLong(reserveDate), formatDateLong(endDate), reservation.term),
+  );
   $('#head-count').text(t('reserve.headCount', reservation.headCount));
   let plansHtml = '';
   if (reservation.breakfast) {
@@ -62,7 +76,7 @@ $(function() {
   $('#contact').text(contactText);
   $('#comment').text(reservation.comment ? reservation.comment : t('reserve.none'));
 
-  $('#success-modal').on('hidden.bs.modal', function() {
+  $('#success-modal').on('hidden.bs.modal', function () {
     window.close();
   });
 });
