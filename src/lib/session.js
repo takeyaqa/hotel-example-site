@@ -1,4 +1,4 @@
-import { getPresetUsers } from './i18n.js';
+import { getPresetUsers } from "./i18n.js";
 
 /**
  * Get user data
@@ -42,7 +42,7 @@ export function isValidUser(email, password) {
  * @return {string} session user email
  */
 export function getSessionUser() {
-  return document.cookie.replace(/(?:(?:^|.*;\s*)session\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+  return document.cookie.replace(/(?:(?:^|.*;\s*)session\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 }
 
 /**
@@ -50,14 +50,14 @@ export function getSessionUser() {
  * @param {string} email
  */
 export function login(email) {
-  document.cookie = 'session=' + email + '; max-age=630720000';
+  document.cookie = "session=" + email + "; max-age=630720000";
 }
 
 /**
  * logout
  */
 export function logout() {
-  document.cookie = 'session=; max-age=0';
+  document.cookie = "session=; max-age=0";
 }
 
 /**
@@ -65,7 +65,7 @@ export function logout() {
  * @return {string}
  */
 export function genTransactionId() {
-  return '' + (Math.floor(Math.random() * (10000000000 - 1000000000)) + 1000000000);
+  return "" + (Math.floor(Math.random() * (10000000000 - 1000000000)) + 1000000000);
 }
 
 /**
@@ -73,14 +73,14 @@ export function genTransactionId() {
  * @return {string}
  */
 export function getTransactionId() {
-  return document.cookie.replace(/(?:(?:^|.*;\s*)transaction\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+  return document.cookie.replace(/(?:(?:^|.*;\s*)transaction\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 }
 
 /**
  * delete transaction ID
  */
 export function deleteTransactionId() {
-  document.cookie = 'transaction=; max-age=0';
+  document.cookie = "transaction=; max-age=0";
 }
 
 /**
@@ -88,10 +88,10 @@ export function deleteTransactionId() {
  */
 export function redirectToTop() {
   let path;
-  if (location.pathname.split('/').length === 2) {
-    path = location.pathname.replace(/(\/.+\.html)/, '/index.html');
+  if (location.pathname.split("/").length === 2) {
+    path = location.pathname.replace(/(\/.+\.html)/, "/index.html");
   } else {
-    path = location.pathname.replace(/(\/.+)(\/.+\.html)/, '$1/index.html');
+    path = location.pathname.replace(/(\/.+)(\/.+\.html)/, "$1/index.html");
   }
   location.assign(location.origin + path);
 }
@@ -100,11 +100,11 @@ export function redirectToTop() {
  * Set login status to navbar
  */
 export function setLoginNavbar() {
-  $('#signup-holder').removeClass('d-block').addClass('d-none');
-  $('#login-holder').removeClass('d-block').addClass('d-none');
-  $('#mypage-holder').removeClass('d-none').addClass('d-block');
-  $('#logout-holder').removeClass('d-none').addClass('d-block');
-  $('#logout-form').on('submit', function () {
+  $("#signup-holder").removeClass("d-block").addClass("d-none");
+  $("#login-holder").removeClass("d-block").addClass("d-none");
+  $("#mypage-holder").removeClass("d-none").addClass("d-block");
+  $("#logout-holder").removeClass("d-none").addClass("d-block");
+  $("#logout-form").on("submit", function () {
     logout();
   });
 }
@@ -122,9 +122,9 @@ export function canDisplayPlan(plan, user) {
   if (!user) {
     return false;
   }
-  if (plan.only === 'member') {
+  if (plan.only === "member") {
     return true;
-  } else if (plan.only === 'premium') {
-    return user.rank === 'premium';
+  } else if (plan.only === "premium") {
+    return user.rank === "premium";
   }
 }

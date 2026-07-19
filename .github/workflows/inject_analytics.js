@@ -1,5 +1,5 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 /**
  * Recursively search for HTML files from the specified directory
@@ -17,7 +17,7 @@ function findHtmlFiles(dir, htmlFiles = []) {
     if (stat.isDirectory()) {
       // Recursively search if the entry is a directory
       findHtmlFiles(filePath, htmlFiles);
-    } else if (stat.isFile() && path.extname(file).toLowerCase() === '.html') {
+    } else if (stat.isFile() && path.extname(file).toLowerCase() === ".html") {
       // Add to the array if the entry is an HTML file
       htmlFiles.push(filePath);
     }
@@ -33,7 +33,7 @@ function findHtmlFiles(dir, htmlFiles = []) {
  */
 function loadHtmlFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, 'utf8');
+    const content = fs.readFileSync(filePath, "utf8");
 
     return {
       filePath,
@@ -57,7 +57,7 @@ function injectAnalyticsScript(loadedFile) {
   }
   const paAnalyticsId = process.env.PA_ANALYTICS_ID;
   if (!/^pa-[a-zA-Z0-9]+$/.test(paAnalyticsId)) {
-    throw new Error('Invalid PA_ANALYTICS_ID format');
+    throw new Error("Invalid PA_ANALYTICS_ID format");
   }
 
   // Script tag to inject
@@ -69,14 +69,14 @@ function injectAnalyticsScript(loadedFile) {
     </script>`;
 
   // Search for the comment placeholder
-  const placeholder = '<!-- Inject analytics tags -->';
+  const placeholder = "<!-- Inject analytics tags -->";
 
   if (!content.includes(placeholder)) {
     return content;
   }
 
   // Check for an existing analytics script
-  if (content.includes('<!-- Privacy-friendly analytics by Plausible -->')) {
+  if (content.includes("<!-- Privacy-friendly analytics by Plausible -->")) {
     return content;
   }
 
@@ -93,7 +93,7 @@ function injectAnalyticsScript(loadedFile) {
  */
 function saveHtmlFile(filePath, content) {
   try {
-    fs.writeFileSync(filePath, content, 'utf8');
+    fs.writeFileSync(filePath, content, "utf8");
   } catch (error) {
     process.exit(1);
   }
@@ -126,11 +126,11 @@ function loadHtmlFilesRecursively(targetDir) {
  * Main process
  */
 function main() {
-  const targetDirectories = ['ja', 'en-US'];
+  const targetDirectories = ["ja", "en-US"];
   const allLoadedFiles = [];
 
   // Process the top-level index.html
-  const topLevelIndexPath = 'index.html';
+  const topLevelIndexPath = "index.html";
   if (fs.existsSync(topLevelIndexPath)) {
     const loadedFile = loadHtmlFile(topLevelIndexPath);
     if (loadedFile) {

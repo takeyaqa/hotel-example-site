@@ -1,42 +1,42 @@
-import messageJa from '../../data/ja/message.json';
-import messageEnUS from '../../data/en-US/message.json';
-import userJa from '../../data/ja/user.json';
-import userEnUS from '../../data/en-US/user.json';
+import messageJa from "../../data/ja/message.json";
+import messageEnUS from "../../data/en-US/message.json";
+import userJa from "../../data/ja/user.json";
+import userEnUS from "../../data/en-US/user.json";
 
 const MESSAGES = {
   ja: messageJa,
-  'en-US': messageEnUS,
+  "en-US": messageEnUS,
 };
 
 const PRESET_USERS = {
   ja: userJa,
-  'en-US': userEnUS,
+  "en-US": userEnUS,
 };
 
 const CURRENCY_FORMATTER = {
-  ja: new Intl.NumberFormat('ja-JP', {
-    style: 'currency',
-    currency: 'JPY',
-    currencyDisplay: 'name',
+  ja: new Intl.NumberFormat("ja-JP", {
+    style: "currency",
+    currency: "JPY",
+    currencyDisplay: "name",
   }),
-  'en-US': new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    currencyDisplay: 'symbol',
+  "en-US": new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    currencyDisplay: "symbol",
   }),
 };
 
 const DATE_LONG_FORMATTER = {
-  ja: new Intl.DateTimeFormat('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' }),
-  'en-US': new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+  ja: new Intl.DateTimeFormat("ja-JP", { year: "numeric", month: "long", day: "numeric" }),
+  "en-US": new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric" }),
 };
 
 const DATE_SHORT_FORMATTER = {
   ja: function (date) {
-    return date.getFullYear() + '/' + pad(date.getMonth() + 1) + '/' + pad(date.getDate());
+    return date.getFullYear() + "/" + pad(date.getMonth() + 1) + "/" + pad(date.getDate());
   },
-  'en-US': function (date) {
-    return pad(date.getMonth() + 1) + '/' + pad(date.getDate()) + '/' + date.getFullYear();
+  "en-US": function (date) {
+    return pad(date.getMonth() + 1) + "/" + pad(date.getDate()) + "/" + date.getFullYear();
   },
 };
 
@@ -51,7 +51,7 @@ const DATE_SHORT_PARSER = {
     const date = parseInt(arr[3], 10);
     return new Date(year, month - 1, date);
   },
-  'en-US': function (dateString) {
+  "en-US": function (dateString) {
     const arr = dateString.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
     if (!arr || arr.length !== 4) {
       return null;
@@ -65,7 +65,7 @@ const DATE_SHORT_PARSER = {
 
 const ADDITIONAL_PLAN_PRICE = {
   ja: 1000,
-  'en-US': 10.0,
+  "en-US": 10.0,
 };
 
 /**
@@ -73,7 +73,7 @@ const ADDITIONAL_PLAN_PRICE = {
  * @returns {string} locale
  */
 export function getLocale() {
-  return $('html').attr('lang');
+  return $("html").attr("lang");
 }
 
 /**
@@ -82,7 +82,7 @@ export function getLocale() {
  * @returns {object}
  */
 export function getMessages(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return MESSAGES[locale];
 }
 
@@ -92,7 +92,7 @@ export function getMessages(locale) {
  * @returns {object}
  */
 export function getPresetUsers(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return PRESET_USERS[locale];
 }
 
@@ -102,7 +102,7 @@ export function getPresetUsers(locale) {
  * @returns {Intl.NumberFormat}
  */
 export function getCurrencyFormatter(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return CURRENCY_FORMATTER[locale];
 }
 
@@ -112,7 +112,7 @@ export function getCurrencyFormatter(locale) {
  * @returns {Intl.DateTimeFormat}
  */
 export function getDateLongFormatter(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return DATE_LONG_FORMATTER[locale];
 }
 
@@ -122,7 +122,7 @@ export function getDateLongFormatter(locale) {
  * @returns {Intl.DateTimeFormat}
  */
 export function getDateShortFormatter(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return DATE_SHORT_FORMATTER[locale];
 }
 
@@ -132,7 +132,7 @@ export function getDateShortFormatter(locale) {
  * @returns {Function}
  */
 export function getDateShortParser(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return DATE_SHORT_PARSER[locale];
 }
 
@@ -142,7 +142,7 @@ export function getDateShortParser(locale) {
  * @returns {number}
  */
 export function getAdditionalPlanPrice(locale) {
-  locale = typeof locale !== 'undefined' ? locale : getLocale();
+  locale = typeof locale !== "undefined" ? locale : getLocale();
   return ADDITIONAL_PLAN_PRICE[locale];
 }
 
@@ -153,7 +153,7 @@ export function getAdditionalPlanPrice(locale) {
  */
 function pad(number) {
   if (number < 10) {
-    return '0' + number;
+    return "0" + number;
   }
-  return '' + number;
+  return "" + number;
 }
