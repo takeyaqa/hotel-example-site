@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.61.1-noble
-      options: --user 1001
+      options: --init --ipc=host
     steps:
       - uses: actions/checkout@v7
       - name: Setup pnpm
