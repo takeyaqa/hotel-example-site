@@ -3,9 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Plans', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/en-US/');
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - Website for Practice Test Automation',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
   });
 
   test('It should be display plans when not logged in', async ({ page }) => {
@@ -50,9 +48,7 @@ test.describe('Plans', () => {
     ]);
   });
 
-  test('It should be display plans when logged in premium member', async ({
-    page,
-  }) => {
+  test('It should be display plans when logged in premium member', async ({ page }) => {
     await page.getByRole('button', { name: 'Login' }).click();
     await expect(page).toHaveTitle(/Login/);
 

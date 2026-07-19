@@ -3,9 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('会員登録', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/ja/');
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - テスト自動化練習サイト',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
     await page.getByRole('link', { name: '会員登録' }).click();
     await expect(page).toHaveTitle(/会員登録/);
   });
@@ -24,9 +22,7 @@ test.describe('会員登録', () => {
     await page.getByRole('button', { name: '登録' }).click();
 
     await expect(page).toHaveTitle(/マイページ/);
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-      'マイページ',
-    );
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('マイページ');
   });
 
   test('必須項目を未入力にするとエラーとなること', async ({ page }) => {
@@ -48,9 +44,9 @@ test.describe('会員登録', () => {
     await expect(page.locator('#password ~ .invalid-feedback')).toHaveText(
       'このフィールドを入力してください。',
     );
-    await expect(
-      page.locator('#password-confirmation ~ .invalid-feedback'),
-    ).toHaveText('このフィールドを入力してください。');
+    await expect(page.locator('#password-confirmation ~ .invalid-feedback')).toHaveText(
+      'このフィールドを入力してください。',
+    );
     await expect(page.locator('#username ~ .invalid-feedback')).toHaveText(
       'このフィールドを入力してください。',
     );
@@ -79,9 +75,9 @@ test.describe('会員登録', () => {
     await expect(page.locator('#password ~ .invalid-feedback')).toHaveText(
       '8文字以上で入力してください。',
     );
-    await expect(
-      page.locator('#password-confirmation ~ .invalid-feedback'),
-    ).toHaveText('8文字以上で入力してください。');
+    await expect(page.locator('#password-confirmation ~ .invalid-feedback')).toHaveText(
+      '8文字以上で入力してください。',
+    );
     await expect(page.locator('#username ~ .invalid-feedback')).toBeEmpty();
     await expect(page.locator('#address ~ .invalid-feedback')).toBeEmpty();
     await expect(page.locator('#tel ~ .invalid-feedback')).toHaveText(
@@ -105,14 +101,10 @@ test.describe('会員登録', () => {
     await page.getByRole('button', { name: '登録' }).click();
 
     await expect(page).toHaveTitle(/マイページ/);
-    await expect(page.getByRole('heading', { level: 2 })).toHaveText(
-      'マイページ',
-    );
+    await expect(page.getByRole('heading', { level: 2 })).toHaveText('マイページ');
 
     await page.getByRole('button', { name: 'ログアウト' }).click();
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - テスト自動化練習サイト',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
     await page.getByRole('link', { name: '会員登録' }).click();
     await expect(page).toHaveTitle(/会員登録/);
 
@@ -146,8 +138,8 @@ test.describe('会員登録', () => {
     await page.getByLabel('お知らせを受け取る').setChecked(true);
     await page.getByRole('button', { name: '登録' }).click();
 
-    await expect(
-      page.locator('#password-confirmation ~ .invalid-feedback'),
-    ).toHaveText('入力されたパスワードと一致しません。');
+    await expect(page.locator('#password-confirmation ~ .invalid-feedback')).toHaveText(
+      '入力されたパスワードと一致しません。',
+    );
   });
 });

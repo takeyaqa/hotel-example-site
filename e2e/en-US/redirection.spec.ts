@@ -3,18 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('Redirection', () => {
   const BASE_URL_LOCALE = '/en-US';
 
-  test('It should redirect MyPage to Top when not logged in', async ({
-    page,
-  }) => {
+  test('It should redirect MyPage to Top when not logged in', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/mypage.html`);
     await expect(page).toHaveURL(/index\.html$/);
   });
 
   test('It should redirect Login to Top when logged in', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/`);
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - Website for Practice Test Automation',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
     await page.getByRole('button', { name: 'Login' }).click();
     await expect(page).toHaveTitle(/Login/);
     await page.getByLabel('Email').fill('clark@example.com');
@@ -27,9 +23,7 @@ test.describe('Redirection', () => {
 
   test('It should redirect Sign Up to Top when logged in', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/`);
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - Website for Practice Test Automation',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
     await page.getByRole('button', { name: 'Login' }).click();
     await expect(page).toHaveTitle(/Login/);
     await page.getByLabel('Email').fill('clark@example.com');
@@ -40,23 +34,17 @@ test.describe('Redirection', () => {
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('It should redirect Reserve to Top when invalid plan id [1]', async ({
-    page,
-  }) => {
+  test('It should redirect Reserve to Top when invalid plan id [1]', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/reserve.html?plan-id=100`);
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('It should redirect Reserve to Top when invalid plan id [2]', async ({
-    page,
-  }) => {
+  test('It should redirect Reserve to Top when invalid plan id [2]', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/reserve.html?plan-id=abc`);
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('It should redirect Reserve to Top when invalid plan id [3]', async ({
-    page,
-  }) => {
+  test('It should redirect Reserve to Top when invalid plan id [3]', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/reserve.html`);
     await expect(page).toHaveURL(/index\.html$/);
   });
@@ -79,9 +67,7 @@ test.describe('Redirection', () => {
     page,
   }) => {
     await page.goto(`${BASE_URL_LOCALE}/`);
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - Website for Practice Test Automation',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
     await page.getByRole('button', { name: 'Login' }).click();
     await expect(page).toHaveTitle(/Login/);
     await page.getByLabel('Email').fill('diana@example.com');
@@ -92,9 +78,7 @@ test.describe('Redirection', () => {
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('It should redirect Confirm to Top when direct access', async ({
-    page,
-  }) => {
+  test('It should redirect Confirm to Top when direct access', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/confirm.html`);
     await expect(page).toHaveURL(/index\.html$/);
   });

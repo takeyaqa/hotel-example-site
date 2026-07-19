@@ -3,9 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('Sign up', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/en-US/');
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - Website for Practice Test Automation',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
     await page.getByRole('link', { name: 'Sign up' }).click();
     await expect(page).toHaveTitle(/Sign up/);
   });
@@ -46,9 +44,9 @@ test.describe('Sign up', () => {
     await expect(page.locator('#password ~ .invalid-feedback')).toHaveText(
       'Please fill out this field.',
     );
-    await expect(
-      page.locator('#password-confirmation ~ .invalid-feedback'),
-    ).toHaveText('Please fill out this field.');
+    await expect(page.locator('#password-confirmation ~ .invalid-feedback')).toHaveText(
+      'Please fill out this field.',
+    );
     await expect(page.locator('#username ~ .invalid-feedback')).toHaveText(
       'Please fill out this field.',
     );
@@ -77,9 +75,9 @@ test.describe('Sign up', () => {
     await expect(page.locator('#password ~ .invalid-feedback')).toHaveText(
       'Please lengthen this text to 8 characters or more.',
     );
-    await expect(
-      page.locator('#password-confirmation ~ .invalid-feedback'),
-    ).toHaveText('Please lengthen this text to 8 characters or more.');
+    await expect(page.locator('#password-confirmation ~ .invalid-feedback')).toHaveText(
+      'Please lengthen this text to 8 characters or more.',
+    );
     await expect(page.locator('#username ~ .invalid-feedback')).toBeEmpty();
     await expect(page.locator('#address ~ .invalid-feedback')).toBeEmpty();
     await expect(page.locator('#tel ~ .invalid-feedback')).toHaveText(
@@ -89,9 +87,7 @@ test.describe('Sign up', () => {
     await expect(page.locator('#birthday ~ .invalid-feedback')).toBeEmpty();
   });
 
-  test('It should be an error when email has already been taken', async ({
-    page,
-  }) => {
+  test('It should be an error when email has already been taken', async ({ page }) => {
     await page.getByLabel('Email Required').fill('new-user@example.com');
     await page.getByLabel('Password Required').fill('password');
     await page.getByLabel('Password (confirmation) Required').fill('password');
@@ -108,9 +104,7 @@ test.describe('Sign up', () => {
     await expect(page.getByRole('heading', { level: 2 })).toHaveText('MyPage');
 
     await page.getByRole('button', { name: 'Logout' }).click();
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - Website for Practice Test Automation',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - Website for Practice Test Automation');
     await page.getByRole('link', { name: 'Sign up' }).click();
     await expect(page).toHaveTitle(/Sign up/);
 
@@ -131,9 +125,7 @@ test.describe('Sign up', () => {
     );
   });
 
-  test("It should be an error when password doesn't match", async ({
-    page,
-  }) => {
+  test("It should be an error when password doesn't match", async ({ page }) => {
     await page.getByLabel('Email Required').fill('');
     await page.getByLabel('Password Required').fill('password');
     await page.getByLabel('Password (confirmation) Required').fill('123456789');
@@ -146,8 +138,8 @@ test.describe('Sign up', () => {
     await page.getByLabel('Receive notification').setChecked(true);
     await page.getByRole('button', { name: 'Sign up' }).click();
 
-    await expect(
-      page.locator('#password-confirmation ~ .invalid-feedback'),
-    ).toHaveText("Password doesn't match.");
+    await expect(page.locator('#password-confirmation ~ .invalid-feedback')).toHaveText(
+      "Password doesn't match.",
+    );
   });
 });

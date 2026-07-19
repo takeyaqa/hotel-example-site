@@ -3,9 +3,7 @@ import { test, expect } from '@playwright/test';
 test.describe('プラン一覧', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/ja/');
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - テスト自動化練習サイト',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
   });
 
   test('未ログイン状態でプラン一覧が表示されること', async ({ page }) => {
@@ -24,9 +22,7 @@ test.describe('プラン一覧', () => {
     ]);
   });
 
-  test('一般会員でログイン状態でプラン一覧が表示されること', async ({
-    page,
-  }) => {
+  test('一般会員でログイン状態でプラン一覧が表示されること', async ({ page }) => {
     await page.getByRole('button', { name: 'ログイン' }).click();
     await expect(page).toHaveTitle(/ログイン/);
 
@@ -52,9 +48,7 @@ test.describe('プラン一覧', () => {
     ]);
   });
 
-  test('プレミアム会員でログイン状態でプラン一覧が表示されること', async ({
-    page,
-  }) => {
+  test('プレミアム会員でログイン状態でプラン一覧が表示されること', async ({ page }) => {
     await page.getByRole('button', { name: 'ログイン' }).click();
     await expect(page).toHaveTitle(/ログイン/);
 

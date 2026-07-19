@@ -3,20 +3,14 @@ import { test, expect } from '@playwright/test';
 test.describe('リダイレクト', () => {
   const BASE_URL_LOCALE = '/ja';
 
-  test('未ログインでマイページからトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('未ログインでマイページからトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/mypage.html`);
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('ログイン済みでログイン画面からトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('ログイン済みでログイン画面からトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/`);
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - テスト自動化練習サイト',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
     await page.getByRole('button', { name: 'ログイン' }).click();
     await expect(page).toHaveTitle(/ログイン/);
     await page.getByLabel('メールアドレス').fill('ichiro@example.com');
@@ -28,13 +22,9 @@ test.describe('リダイレクト', () => {
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('ログイン済みで登録画面からトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('ログイン済みで登録画面からトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/`);
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - テスト自動化練習サイト',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
     await page.getByRole('button', { name: 'ログイン' }).click();
     await expect(page).toHaveTitle(/ログイン/);
     await page.getByLabel('メールアドレス').fill('ichiro@example.com');
@@ -61,27 +51,19 @@ test.describe('リダイレクト', () => {
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('未ログインで会員専用プランでトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('未ログインで会員専用プランでトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/reserve.html?plan-id=3`);
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('未ログインでプレミアム専用プランでトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('未ログインでプレミアム専用プランでトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/reserve.html?plan-id=1`);
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('一般会員でプレミアム専用プランでトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('一般会員でプレミアム専用プランでトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/`);
-    await expect(page).toHaveTitle(
-      'HOTEL PLANISPHERE - テスト自動化練習サイト',
-    );
+    await expect(page).toHaveTitle('HOTEL PLANISPHERE - テスト自動化練習サイト');
     await page.getByRole('button', { name: 'ログイン' }).click();
     await expect(page).toHaveTitle(/ログイン/);
     await page.getByLabel('メールアドレス').fill('sakura@example.com');
@@ -93,9 +75,7 @@ test.describe('リダイレクト', () => {
     await expect(page).toHaveURL(/index\.html$/);
   });
 
-  test('予約画面を経ずに確認画面でトップへリダイレクトすること', async ({
-    page,
-  }) => {
+  test('予約画面を経ずに確認画面でトップへリダイレクトすること', async ({ page }) => {
     await page.goto(`${BASE_URL_LOCALE}/confirm.html`);
     await expect(page).toHaveURL(/index\.html$/);
   });
