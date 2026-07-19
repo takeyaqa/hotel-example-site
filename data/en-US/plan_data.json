@@ -2,7 +2,7 @@
   {
     "id": 0,
     "name": "Plan with special offers",
-    "roomBill": 70.00,
+    "roomBill": 70.0,
     "minHeadCount": 1,
     "maxHeadCount": 9,
     "minTerm": 1,
@@ -14,7 +14,7 @@
   {
     "id": 1,
     "name": "Premium plan",
-    "roomBill": 100.00,
+    "roomBill": 100.0,
     "minHeadCount": 2,
     "maxHeadCount": 9,
     "minTerm": 1,
@@ -26,7 +26,7 @@
   {
     "id": 2,
     "name": "With dinner",
-    "roomBill": 85.00,
+    "roomBill": 85.0,
     "minHeadCount": 1,
     "maxHeadCount": 4,
     "minTerm": 1,
@@ -38,7 +38,7 @@
   {
     "id": 3,
     "name": "Economical",
-    "roomBill": 60.00,
+    "roomBill": 60.0,
     "minHeadCount": 1,
     "maxHeadCount": 9,
     "minTerm": 1,
@@ -50,7 +50,7 @@
   {
     "id": 4,
     "name": "Staying without meals",
-    "roomBill": 55.00,
+    "roomBill": 55.0,
     "minHeadCount": 1,
     "maxHeadCount": 2,
     "minTerm": 1,
@@ -62,7 +62,7 @@
   {
     "id": 5,
     "name": "Business trip",
-    "roomBill": 75.00,
+    "roomBill": 75.0,
     "minHeadCount": 1,
     "maxHeadCount": 2,
     "minTerm": 1,
@@ -74,7 +74,7 @@
   {
     "id": 6,
     "name": "With beauty salon",
-    "roomBill": 90.00,
+    "roomBill": 90.0,
     "minHeadCount": 1,
     "maxHeadCount": 6,
     "minTerm": 1,
@@ -86,7 +86,7 @@
   {
     "id": 7,
     "name": "With private onsen",
-    "roomBill": 90.00,
+    "roomBill": 90.0,
     "minHeadCount": 1,
     "maxHeadCount": 6,
     "minTerm": 1,
@@ -98,7 +98,7 @@
   {
     "id": 8,
     "name": "For honeymoon",
-    "roomBill": 80.00,
+    "roomBill": 80.0,
     "minHeadCount": 2,
     "maxHeadCount": 2,
     "minTerm": 1,
@@ -110,7 +110,7 @@
   {
     "id": 9,
     "name": "With complimentary ticket",
-    "roomBill": 100.00,
+    "roomBill": 100.0,
     "minHeadCount": 1,
     "maxHeadCount": 9,
     "minTerm": 1,
