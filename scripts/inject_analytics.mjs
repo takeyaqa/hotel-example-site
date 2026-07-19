@@ -128,11 +128,11 @@ function loadHtmlFilesRecursively(targetDir) {
  * Main process
  */
 function main() {
-  const targetDirectories = ["ja", "en-US"];
+  const targetDirectories = [join("_site", "ja"), join("_site", "en-US")];
   const allLoadedFiles = [];
 
   // Process the top-level index.html
-  const topLevelIndexPath = "index.html";
+  const topLevelIndexPath = join("_site", "index.html");
   if (existsSync(topLevelIndexPath)) {
     const loadedFile = loadHtmlFile(topLevelIndexPath);
     if (loadedFile) {
