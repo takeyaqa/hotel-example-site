@@ -1,8 +1,6 @@
-name: Playwright Tests
+name: Check pull request
 on:
-  schedule:
-    - cron: "18 18 * * *"
-  workflow_dispatch:
+  pull_request:
 
 permissions:
   contents: read
@@ -10,10 +8,11 @@ permissions:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.61.1-noble
-      options: --user 1001
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
       - name: Setup pnpm
@@ -27,13 +26,17 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Run Playwright tests for deployed site
+      - name: Install Playwright
+        run: pnpm exec playwright install --with-deps
+      - name: Build project
+        run: pnpm run build
+      - name: Run Playwright tests for local server
         run: pnpm run test
         env:
-          USE_DEPLOYED_SITE: "true"
+          USE_DEPLOYED_SITE: "false"
       - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.os }}
           path: playwright-report/
           retention-days: 30
