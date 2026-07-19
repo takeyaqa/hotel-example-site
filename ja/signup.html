@@ -2,12 +2,12 @@
 <html lang="ja">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="robots" content="noindex" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css" />
 
     <title>会員登録 | HOTEL PLANISPHERE - テスト自動化練習サイト</title>
     <!-- Inject analytics tags -->
@@ -15,8 +15,18 @@
   <body class="bg-light">
     <h1 class="text-center text-uppercase d-none d-lg-block display-3 my-5">Hotel Planisphere</h1>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4">
-      <a class="navbar-brand text-uppercase font-weight-bold d-lg-none" href="#">Hotel Planisphere</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand text-uppercase font-weight-bold d-lg-none" href="#"
+        >Hotel Planisphere</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -46,50 +56,85 @@
         <div class="col-lg-9 mx-auto">
           <form action="./mypage.html" id="signup-form" novalidate>
             <div class="form-group">
-              <label for="email">メールアドレス <span class="badge badge-primary">必須</span></label>
-              <input type="email" class="form-control" name="email" id="email" required>
+              <label for="email"
+                >メールアドレス <span class="badge badge-primary">必須</span></label
+              >
+              <input type="email" class="form-control" name="email" id="email" required />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="password">パスワード <span class="badge badge-primary">必須</span></label>
-              <input type="password" class="form-control" name="password" id="password" autocomplete="new-password" minlength="8" pattern=".{8,}" required>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                id="password"
+                autocomplete="new-password"
+                minlength="8"
+                pattern=".{8,}"
+                required
+              />
               <small class="form-text text-muted">8文字以上で入力してください。</small>
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
-              <label for="password-confirmation">パスワード（確認） <span class="badge badge-primary">必須</span></label>
-              <input type="password" class="form-control" name="password-confirmation" id="password-confirmation" autocomplete="new-password" minlength="8" pattern=".{8,}" required>
-              <small class="form-text text-muted">確認のため再度パスワードを入力してください。</small>
+              <label for="password-confirmation"
+                >パスワード（確認） <span class="badge badge-primary">必須</span></label
+              >
+              <input
+                type="password"
+                class="form-control"
+                name="password-confirmation"
+                id="password-confirmation"
+                autocomplete="new-password"
+                minlength="8"
+                pattern=".{8,}"
+                required
+              />
+              <small class="form-text text-muted"
+                >確認のため再度パスワードを入力してください。</small
+              >
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="username">氏名 <span class="badge badge-primary">必須</span></label>
-              <input type="text" class="form-control" name="username" id="username" required>
+              <input type="text" class="form-control" name="username" id="username" required />
               <div class="invalid-feedback"></div>
             </div>
             <fieldset class="form-group">
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="rank" id="rank-premium" value="premium" checked>
-                <label class="form-check-label" for="rank-premium">
-                  プレミアム会員
-                </label>
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="rank"
+                  id="rank-premium"
+                  value="premium"
+                  checked
+                />
+                <label class="form-check-label" for="rank-premium"> プレミアム会員 </label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" name="rank" id="rank-normal" value="normal">
-                <label class="form-check-label" for="rank-normal">
-                  一般会員
-                </label>
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  name="rank"
+                  id="rank-normal"
+                  value="normal"
+                />
+                <label class="form-check-label" for="rank-normal"> 一般会員 </label>
               </div>
             </fieldset>
             <div class="form-group">
               <label for="address">住所</label>
-              <input type="text" class="form-control" name="address" id="address">
+              <input type="text" class="form-control" name="address" id="address" />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="tel">電話番号</label>
-              <input type="tel" class="form-control" name="tel" id="tel" pattern="[0-9]{11}">
-              <small class="form-text text-muted">11桁の数字で入力してください。例：01133335555</small>
+              <input type="tel" class="form-control" name="tel" id="tel" pattern="[0-9]{11}" />
+              <small class="form-text text-muted"
+                >11桁の数字で入力してください。例：01133335555</small
+              >
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
@@ -104,15 +149,24 @@
             </div>
             <div class="form-group">
               <label for="birthday">生年月日</label>
-              <input type="date" class="form-control" name="birthday" id="birthday" pattern="[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}">
+              <input
+                type="date"
+                class="form-control"
+                name="birthday"
+                id="birthday"
+                pattern="[0-9]{4}-[0-9]{1,2}-[0-9]{1,2}"
+              />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" name="notification" id="notification">
-                <label class="form-check-label" for="notification">
-                  お知らせを受け取る
-                </label>
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  name="notification"
+                  id="notification"
+                />
+                <label class="form-check-label" for="notification"> お知らせを受け取る </label>
               </div>
             </div>
             <button type="submit" class="btn btn-primary btn-block">登録</button>
@@ -123,7 +177,9 @@
     <footer class="text-center py-5">
       <div class="container">
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a></li>
+          <li class="list-inline-item">
+            <a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a>
+          </li>
         </ul>
         <p class="text-muted">© 2020-2026 Takeshi Kishi</p>
       </div>

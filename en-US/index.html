@@ -2,11 +2,11 @@
 <html lang="en-US">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css" />
 
     <title>HOTEL PLANISPHERE - Website for Practice Test Automation</title>
     <!-- Inject analytics tags -->
@@ -14,8 +14,18 @@
   <body class="bg-light">
     <h1 class="text-center text-uppercase d-none d-lg-block display-3 my-5">Hotel Planisphere</h1>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4">
-      <a class="navbar-brand text-uppercase font-weight-bold d-lg-none" href="#">Hotel Planisphere</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand text-uppercase font-weight-bold d-lg-none" href="#"
+        >Hotel Planisphere</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -33,7 +43,9 @@
             <a class="nav-link" href="./mypage.html">Mypage</a>
           </li>
           <li class="nav-item px-lg-4 d-block" id="login-holder">
-            <a class="btn btn-outline-secondary my-2 my-sm-0" href="./login.html" role="button">Login</a>
+            <a class="btn btn-outline-secondary my-2 my-sm-0" href="./login.html" role="button"
+              >Login</a
+            >
           </li>
           <li class="nav-item px-lg-4 d-none" id="logout-holder">
             <form action="./index.html" class="form-inline" id="logout-form" novalidate>
@@ -47,30 +59,58 @@
       <div class="row bg-white my-3 px-3 shadow-sm border border-danger">
         <div class="col">
           <h2 class="my-4 text-danger">Notice</h2>
-          <p>This website has moved to a new domain, <a href="https://hotel-example-site.takeyaqa.dev/">https://hotel-example-site.takeyaqa.dev/</a>, as of December 1, 2024.<br><strong>Redirects from hotel.testplanisphere.dev ended on December 31, 2025.</strong></p>
+          <p>
+            This website has moved to a new domain,
+            <a href="https://hotel-example-site.takeyaqa.dev/"
+              >https://hotel-example-site.takeyaqa.dev/</a
+            >, as of December 1, 2024.<br /><strong
+              >Redirects from hotel.testplanisphere.dev ended on December 31, 2025.</strong
+            >
+          </p>
         </div>
       </div>
       <div class="row bg-white my-3 px-3 shadow-sm">
         <div class="col">
           <h2 class="my-4">This site is a sandbox to practice test automation.</h2>
-          <p>This site aims to learn browser automation with running automation scripts against this site as the system under test. </p>
-          <p>You can refer to this site from any places such as books and blogs under <a href="https://github.com/takeyaqa/hotel-example-site/blob/master/LICENSE">MIT License</a>.</p>
-          <p>It is made for learning test automation, but you can also use it to learn test design and technique.</p>
+          <p>
+            This site aims to learn browser automation with running automation scripts against this
+            site as the system under test.
+          </p>
+          <p>
+            You can refer to this site from any places such as books and blogs under
+            <a href="https://github.com/takeyaqa/hotel-example-site/blob/master/LICENSE"
+              >MIT License</a
+            >.
+          </p>
+          <p>
+            It is made for learning test automation, but you can also use it to learn test design
+            and technique.
+          </p>
         </div>
       </div>
       <div class="row bg-white my-3 px-3 shadow-sm">
         <div class="col">
           <h3 class="my-4">Site Structure</h3>
-          <p>This site provides mocked booking hotel feature. It has input forms to log in, sign up, and reserve a room. The layout is mobile friendly by responsive design.</p>
+          <p>
+            This site provides mocked booking hotel feature. It has input forms to log in, sign up,
+            and reserve a room. The layout is mobile friendly by responsive design.
+          </p>
           <h4 class="my-4">Terms of Use</h4>
           <ul>
             <li>We confirmed sample code worked with the latest Google Chrome in July 2020.</li>
             <li>This site is working on GitHub pages.</li>
-            <li>About input data
+            <li>
+              About input data
               <ul>
-                <li>The data is stored in the browser's Cookie, Session Storage and Local Storage.</li>
+                <li>
+                  The data is stored in the browser's Cookie, Session Storage and Local Storage.
+                </li>
                 <li>The data is NOT stored in the server side such as database.</li>
-                <li>Due to the specification of HTML, the contents of the form are sent as the last part of the URL. Please note that it may be left in the GitHub server's logs and other records.</li>
+                <li>
+                  Due to the specification of HTML, the contents of the form are sent as the last
+                  part of the URL. Please note that it may be left in the GitHub server's logs and
+                  other records.
+                </li>
               </ul>
             </li>
             <li>Do NOT use this site for stress testing.</li>
@@ -80,34 +120,60 @@
           <div class="row">
             <div class="col-12 col-lg-4">
               <h5 class="my-2">Login Page</h5>
-              <p>This page contains simple text inputs and a button. The login information is stored in a Cookie. You can use the users you have saved on the sign up page, or preset ones (see below).</p>
+              <p>
+                This page contains simple text inputs and a button. The login information is stored
+                in a Cookie. You can use the users you have saved on the sign up page, or preset
+                ones (see below).
+              </p>
             </div>
             <div class="col-12 col-lg-4">
               <h5 class="my-2">Sign up Page</h5>
-              <p>This page contains multiple types of inputs. The users registered on this page are stored in Local Storage and can be used for login.</p>
+              <p>
+                This page contains multiple types of inputs. The users registered on this page are
+                stored in Local Storage and can be used for login.
+              </p>
             </div>
             <div class="col-12 col-lg-4">
               <h5 class="my-2">My Page</h5>
-              <p>This page is displayed after you logged in. Registered user information is displayed and can be used for confirmation. And if the user is saved on the sign up page, you can set the icon image and cancel the membership (delete information).</p>
+              <p>
+                This page is displayed after you logged in. Registered user information is displayed
+                and can be used for confirmation. And if the user is saved on the sign up page, you
+                can set the icon image and cancel the membership (delete information).
+              </p>
             </div>
           </div>
-          <hr>
+          <hr />
           <div class="row">
             <div class="col-12 col-lg-4">
               <h5 class="my-2">Plans Page</h5>
-              <p>This page is displayed from "Reserve" menu. The displayed plan will change depending on whether you are "not logged in", "a normal member" or "a premium member". Plan information is loaded asynchronously via Ajax (except for the top ones).</p>
+              <p>
+                This page is displayed from "Reserve" menu. The displayed plan will change depending
+                on whether you are "not logged in", "a normal member" or "a premium member". Plan
+                information is loaded asynchronously via Ajax (except for the top ones).
+              </p>
             </div>
             <div class="col-12 col-lg-4">
               <h5 class="my-2">Reservation Page</h5>
-              <p>This page is for making a reservation, and opened in a new window. This page contains multiple types of inputs, and the total price is dynamically calculated and displayed. The base rate and the number of nights and number of allowed people will change depending on the plan you selected.</p>
+              <p>
+                This page is for making a reservation, and opened in a new window. This page
+                contains multiple types of inputs, and the total price is dynamically calculated and
+                displayed. The base rate and the number of nights and number of allowed people will
+                change depending on the plan you selected.
+              </p>
             </div>
             <div class="col-12 col-lg-4">
               <h5 class="my-2">Confirmation Page</h5>
-              <p>This page will be displayed after the reservation is confirmed. You will see a confirmation of the information you have entered in the reservation. And, an animated dialog will appear.</p>
+              <p>
+                This page will be displayed after the reservation is confirmed. You will see a
+                confirmation of the information you have entered in the reservation. And, an
+                animated dialog will appear.
+              </p>
             </div>
           </div>
           <table class="table my-3">
-            <caption>Preset users</caption>
+            <caption>
+              Preset users
+            </caption>
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -149,7 +215,9 @@
     <footer class="text-center py-5">
       <div class="container">
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a></li>
+          <li class="list-inline-item">
+            <a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a>
+          </li>
         </ul>
         <p class="text-muted">© 2020-2026 Takeshi Kishi</p>
       </div>
