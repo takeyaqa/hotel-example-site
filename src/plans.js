@@ -27,7 +27,7 @@ $(function () {
 /**
  * Generate plan HTML
  * @param {onject} plan plan data
- * @return {string} plan HTML
+ * @returns {string} plan HTML
  */
 function genPlanHtml(plan) {
   let header = "";

@@ -40,6 +40,7 @@ function loadHtmlFile(filePath) {
       content,
     };
   } catch (error) {
+    console.error(error);
     process.exit(1);
   }
 }
@@ -50,7 +51,7 @@ function loadHtmlFile(filePath) {
  * @returns {string} Updated HTML content
  */
 function injectAnalyticsScript(loadedFile) {
-  const { filePath, content } = loadedFile;
+  const { _filePath, content } = loadedFile;
 
   if (!process.env.PA_ANALYTICS_ID) {
     return content;
@@ -95,6 +96,7 @@ function saveHtmlFile(filePath, content) {
   try {
     fs.writeFileSync(filePath, content, "utf8");
   } catch (error) {
+    console.error(error);
     process.exit(1);
   }
 }
