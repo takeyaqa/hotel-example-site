@@ -149,7 +149,7 @@ export function getAdditionalPlanPrice(locale) {
 /**
  * Pad zero
  * @param {number} number
- * @return {string} 0X string
+ * @returns {string} 0X string
  */
 function pad(number) {
   if (number < 10) {

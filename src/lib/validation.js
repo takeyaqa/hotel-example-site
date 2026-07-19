@@ -23,7 +23,7 @@ export function setValidityMessage($inputs) {
 /**
  * Get error messege
  * @param {HTMLInputElement} input
- * @return {string} error messege
+ * @returns {string} error messege
  */
 function getErrorMessege(input) {
   if (input.validity.customError) {
@@ -58,7 +58,7 @@ function getErrorMessege(input) {
 /**
  * Validation for date Input
  * @param {Date} date
- * @return {string} error messege
+ * @returns {string} error messege
  */
 export function validateDateInput(date) {
   if (!date) {

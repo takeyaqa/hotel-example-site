@@ -8,7 +8,7 @@
  * @param {boolean} earlyCheckIn
  * @param {boolean} sightseeing
  * @param {number} additionalPlanPrice
- * @return {number} total bill
+ * @returns {number} total bill
  */
 export function calcTotalBill(
   roomBill,

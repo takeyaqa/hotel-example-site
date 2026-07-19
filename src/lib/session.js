@@ -3,7 +3,7 @@ import { getPresetUsers } from "./i18n.js";
 /**
  * Get user data
  * @param {string} email
- * @return {object} user data
+ * @returns {object} user data
  */
 export function getUser(email) {
   const presetUsers = getPresetUsers();
@@ -30,7 +30,7 @@ export function getUser(email) {
  * check valid user
  * @param {string} email
  * @param {string} password
- * @return {boolean} return true if valid user
+ * @returns {boolean} return true if valid user
  */
 export function isValidUser(email, password) {
   const user = getUser(email);
@@ -39,10 +39,10 @@ export function isValidUser(email, password) {
 
 /**
  * Get session user
- * @return {string} session user email
+ * @returns {string} session user email
  */
 export function getSessionUser() {
-  return document.cookie.replace(/(?:(?:^|.*;\s*)session\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  return document.cookie.replace(/(?:(?:^|.*;\s*)session\s*=\s*([^;]*).*$)|^.*$/, "$1");
 }
 
 /**
@@ -62,7 +62,7 @@ export function logout() {
 
 /**
  * Generate transaction ID
- * @return {string}
+ * @returns {string}
  */
 export function genTransactionId() {
   return "" + (Math.floor(Math.random() * (10000000000 - 1000000000)) + 1000000000);
@@ -70,10 +70,10 @@ export function genTransactionId() {
 
 /**
  * Get transaction ID from session
- * @return {string}
+ * @returns {string}
  */
 export function getTransactionId() {
-  return document.cookie.replace(/(?:(?:^|.*;\s*)transaction\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  return document.cookie.replace(/(?:(?:^|.*;\s*)transaction\s*=\s*([^;]*).*$)|^.*$/, "$1");
 }
 
 /**
@@ -113,7 +113,7 @@ export function setLoginNavbar() {
  * Check display by user
  * @param {object} plan
  * @param {object} user
- * @return {boolean} true if can display
+ * @returns {boolean} true if can display
  */
 export function canDisplayPlan(plan, user) {
   if (!plan.only) {

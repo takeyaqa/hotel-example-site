@@ -22,6 +22,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - run: pnpm run fmt:check
+      - run: pnpm run lint
   build:
     runs-on: ubuntu-latest
     steps:

@@ -4,7 +4,7 @@ import { getMessages } from "./i18n.js";
  * Get translated message
  * @param {string} key
  * @param {...string} params
- * @return {string}
+ * @returns {string}
  */
 export function t() {
   const params = Array.prototype.slice.call(arguments);

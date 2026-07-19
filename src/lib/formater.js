@@ -8,7 +8,7 @@ import {
 /**
  * Format currency
  * @param {number} num
- * @return {string} formated text
+ * @returns {string} formated text
  */
 export function formatCurrency(num) {
   return getCurrencyFormatter().format(num);
@@ -17,7 +17,7 @@ export function formatCurrency(num) {
 /**
  * Format date (long format)
  * @param {Date} date
- * @return {string} formated text
+ * @returns {string} formated text
  */
 export function formatDateLong(date) {
   return getDateLongFormatter().format(date);
@@ -26,7 +26,7 @@ export function formatDateLong(date) {
 /**
  * Format date (short format)
  * @param {Date} date
- * @return {string} formated text
+ * @returns {string} formated text
  */
 export function formatDateShort(date) {
   const formatter = getDateShortFormatter();
@@ -36,7 +36,7 @@ export function formatDateShort(date) {
 /**
  * Parse date
  * @param {string} dateString
- * @return {Date} date
+ * @returns {Date} date
  */
 export function parseDate(dateString) {
   const parser = getDateShortParser();
@@ -46,7 +46,7 @@ export function parseDate(dateString) {
 /**
  * Pad zero
  * @param {number} number
- * @return {string} 0X string
+ * @returns {string} 0X string
  */
 function pad(number) {
   if (number < 10) {
@@ -67,7 +67,7 @@ export function formatDateISO(date) {
 /**
  * Parse date from ISO-format
  * @param {string} dateString
- * @return {Date} date
+ * @returns {Date} date
  */
 export function parseDateISO(dateString) {
   const arr = dateString.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);

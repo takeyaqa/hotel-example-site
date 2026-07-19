@@ -12,6 +12,10 @@ updates:
       prefix: "build"
       include: "scope"
     groups:
+      oxc:
+        patterns:
+          - "oxfmt"
+          - "oxlint"
       webpack:
         patterns:
           - "copy-webpack-plugin"
