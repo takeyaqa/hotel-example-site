@@ -10,7 +10,16 @@
  * @param {number} additionalPlanPrice
  * @return {number} total bill
  */
-export function calcTotalBill(roomBill, date, term, headCount, breakfast, earlyCheckIn, sightseeing, additionalPlanPrice) {
+export function calcTotalBill(
+  roomBill,
+  date,
+  term,
+  headCount,
+  breakfast,
+  earlyCheckIn,
+  sightseeing,
+  additionalPlanPrice,
+) {
   let totalBill = roomBill * headCount * term;
   for (let i = 0; i < term; i++) {
     const restDate = new Date(date.getFullYear(), date.getMonth(), date.getDate());

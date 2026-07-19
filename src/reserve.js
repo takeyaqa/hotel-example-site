@@ -1,11 +1,17 @@
-import {formatCurrency, formatDateShort, parseDate, formatDateISO} from './lib/formater.js';
-import {getLocale, getAdditionalPlanPrice} from './lib/i18n.js';
-import {getSessionUser, getUser, canDisplayPlan, genTransactionId, redirectToTop} from './lib/session.js';
-import {resetCustomValidity, setValidityMessage, validateDateInput} from './lib/validation.js';
-import {calcTotalBill} from './lib/billing.js';
-import {t} from './lib/messages.js';
+import { formatCurrency, formatDateShort, parseDate, formatDateISO } from './lib/formater.js';
+import { getLocale, getAdditionalPlanPrice } from './lib/i18n.js';
+import {
+  getSessionUser,
+  getUser,
+  canDisplayPlan,
+  genTransactionId,
+  redirectToTop,
+} from './lib/session.js';
+import { resetCustomValidity, setValidityMessage, validateDateInput } from './lib/validation.js';
+import { calcTotalBill } from './lib/billing.js';
+import { t } from './lib/messages.js';
 
-$(function() {
+$(function () {
   // Check login
   const session = getSessionUser();
   const user = getUser(session);
@@ -20,7 +26,7 @@ $(function() {
 
   // fetch selected plan data
   const url = location.origin + '/data/' + getLocale() + '/plan_data.json?' + Date.now();
-  $.getJSON(url).done(function(data) {
+  $.getJSON(url).done(function (data) {
     let plan = null;
     for (let i = 0; i < data.length; i++) {
       if (data[i].id === planId) {
@@ -34,27 +40,43 @@ $(function() {
     }
     // set initialize values
     $('#plan-name').text(plan.name);
-    $('#plan-desc').text(t('reserve.planDescLong', formatCurrency(plan.roomBill), plan.minHeadCount, plan.maxHeadCount, plan.maxTerm));
+    $('#plan-desc').text(
+      t(
+        'reserve.planDescLong',
+        formatCurrency(plan.roomBill),
+        plan.minHeadCount,
+        plan.maxHeadCount,
+        plan.maxTerm,
+      ),
+    );
     $('#plan-id-hidden').val(plan.id);
     $('#plan-name-hidden').val(plan.name);
     $('#room-bill-hidden').val(plan.roomBill);
-    $('#term').attr('min', plan.minTerm)
-              .attr('max', plan.maxTerm)
-              .val(plan.minTerm);
-    $('#head-count').attr('min', plan.minHeadCount)
-                    .attr('max', plan.maxHeadCount)
-                    .val(plan.minHeadCount);
+    $('#term').attr('min', plan.minTerm).attr('max', plan.maxTerm).val(plan.minTerm);
+    $('#head-count')
+      .attr('min', plan.minHeadCount)
+      .attr('max', plan.maxHeadCount)
+      .val(plan.minHeadCount);
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     $('#date').val(formatDateShort(tomorrow));
-    const total = calcTotalBill(plan.roomBill, tomorrow, plan.minTerm, plan.minHeadCount, false, false, false, getAdditionalPlanPrice());
+    const total = calcTotalBill(
+      plan.roomBill,
+      tomorrow,
+      plan.minTerm,
+      plan.minHeadCount,
+      false,
+      false,
+      false,
+      getAdditionalPlanPrice(),
+    );
     $('#total-bill').text(formatCurrency(total));
     if (plan.roomPage) {
       $('<iframe></iframe>', {
-        'class': 'embed-responsive-item',
-        'src': './rooms/' + plan.roomPage,
-        'title': t('reserve.roomInfo'),
-        'name': 'room',
+        class: 'embed-responsive-item',
+        src: './rooms/' + plan.roomPage,
+        title: t('reserve.roomInfo'),
+        name: 'room',
       }).appendTo('#room-info');
       $('#room-info').addClass('embed-responsive embed-responsive-1by1');
     }
@@ -73,50 +95,72 @@ $(function() {
     showButtonPanel: true,
     maxDate: 90,
     minDate: 1,
-    onSelect: function() {
+    onSelect: function () {
       $(this).trigger('change');
     },
   });
 
   // Setup contact select
-  $('#contact').on('change', function() {
+  $('#contact').on('change', function () {
     if ($(this).val() === 'no') {
-      $('#email').prop('disabled', true)
-                 .prop('required', false)
-                 .parent().removeClass('d-block').addClass('d-none');
-      $('#tel').prop('disabled', true)
-               .prop('required', false)
-               .parent().removeClass('d-block').addClass('d-none');
+      $('#email')
+        .prop('disabled', true)
+        .prop('required', false)
+        .parent()
+        .removeClass('d-block')
+        .addClass('d-none');
+      $('#tel')
+        .prop('disabled', true)
+        .prop('required', false)
+        .parent()
+        .removeClass('d-block')
+        .addClass('d-none');
     } else if ($(this).val() === 'email') {
-      $('#email').prop('disabled', false)
-                 .prop('required', true)
-                 .parent().removeClass('d-none').addClass('d-block');
-      $('#tel').prop('disabled', true)
-               .prop('required', false)
-               .parent().removeClass('d-block').addClass('d-none');
+      $('#email')
+        .prop('disabled', false)
+        .prop('required', true)
+        .parent()
+        .removeClass('d-none')
+        .addClass('d-block');
+      $('#tel')
+        .prop('disabled', true)
+        .prop('required', false)
+        .parent()
+        .removeClass('d-block')
+        .addClass('d-none');
     } else if ($(this).val() === 'tel') {
-      $('#email').prop('disabled', true)
-                 .prop('required', false)
-                 .parent().removeClass('d-block').addClass('d-none');
-      $('#tel').prop('disabled', false)
-               .prop('required', true)
-               .parent().removeClass('d-none').addClass('d-block');
+      $('#email')
+        .prop('disabled', true)
+        .prop('required', false)
+        .parent()
+        .removeClass('d-block')
+        .addClass('d-none');
+      $('#tel')
+        .prop('disabled', false)
+        .prop('required', true)
+        .parent()
+        .removeClass('d-none')
+        .addClass('d-block');
     }
   });
 
-  // Setup calc total function    
-  $('.needs-calc').on('change', function() {
+  // Setup calc total function
+  $('.needs-calc').on('change', function () {
     resetCustomValidity($(this));
-    if ($(this).attr('id') === 'date' && $("#date")[0].checkValidity()) {
+    if ($(this).attr('id') === 'date' && $('#date')[0].checkValidity()) {
       const dateMessage = validateDateInput(parseDate($('#date').val()));
       if (dateMessage) {
-        $("#date")[0].setCustomValidity(dateMessage);
+        $('#date')[0].setCustomValidity(dateMessage);
       }
     }
-    if ($("#date")[0].checkValidity() && $("#term")[0].checkValidity() && $("#head-count")[0].checkValidity()) {
-      $("#date").parent().removeClass('was-validated');
-      $("#term").parent().removeClass('was-validated');
-      $("#head-count").parent().removeClass('was-validated');
+    if (
+      $('#date')[0].checkValidity() &&
+      $('#term')[0].checkValidity() &&
+      $('#head-count')[0].checkValidity()
+    ) {
+      $('#date').parent().removeClass('was-validated');
+      $('#term').parent().removeClass('was-validated');
+      $('#head-count').parent().removeClass('was-validated');
       updateTotalBill();
     } else {
       $('#total-bill').text('-');
@@ -126,7 +170,7 @@ $(function() {
   });
 
   // Setup submit event
-  $('#reserve-form').on('submit', function() {
+  $('#reserve-form').on('submit', function () {
     resetCustomValidity($(this).find('input'));
     const dateValue = parseDate($('#date').val());
     if ($('#date')[0].checkValidity()) {
@@ -137,19 +181,19 @@ $(function() {
     }
     if (this.checkValidity()) {
       const reservation = {
-        'roomBill': parseInt($('#room-bill-hidden').val(), 10),
-        'planName': $('#plan-name-hidden').val(),
-        'date': formatDateISO(dateValue),
-        'term': parseInt($('#term').val(), 10),
-        'headCount': parseInt($('#head-count').val(), 10),
-        'breakfast': $('#breakfast').prop('checked'),
-        'earlyCheckIn': $('#early-check-in').prop('checked'),
-        'sightseeing': $('#sightseeing').prop('checked'),
-        'username': $('#username').val(),
-        'contact': $('#contact').val(),
-        'email': $('#email').val(),
-        'tel': $('#tel').val(),
-        'comment': $('#comment').val(),
+        roomBill: parseInt($('#room-bill-hidden').val(), 10),
+        planName: $('#plan-name-hidden').val(),
+        date: formatDateISO(dateValue),
+        term: parseInt($('#term').val(), 10),
+        headCount: parseInt($('#head-count').val(), 10),
+        breakfast: $('#breakfast').prop('checked'),
+        earlyCheckIn: $('#early-check-in').prop('checked'),
+        sightseeing: $('#sightseeing').prop('checked'),
+        username: $('#username').val(),
+        contact: $('#contact').val(),
+        email: $('#email').val(),
+        tel: $('#tel').val(),
+        comment: $('#comment').val(),
       };
       const transactionId = genTransactionId();
       sessionStorage.setItem(transactionId, JSON.stringify(reservation));
@@ -171,14 +215,14 @@ function updateTotalBill() {
   const term = parseInt($('#term').val(), 10);
   const headCount = parseInt($('#head-count').val(), 10);
   const totalBill = calcTotalBill(
-      roomBill,
-      date,
-      term, 
-      headCount,
-      $('#breakfast').prop('checked'),
-      $('#early-check-in').prop('checked'),
-      $('#sightseeing').prop('checked'),
-      getAdditionalPlanPrice()
+    roomBill,
+    date,
+    term,
+    headCount,
+    $('#breakfast').prop('checked'),
+    $('#early-check-in').prop('checked'),
+    $('#sightseeing').prop('checked'),
+    getAdditionalPlanPrice(),
   );
   $('#total-bill').text(formatCurrency(totalBill));
 }

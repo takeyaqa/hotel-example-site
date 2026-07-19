@@ -1,11 +1,11 @@
-import {t} from './messages.js';
+import { t } from './messages.js';
 
 /**
  * Reset all validation states
  * @param  {jQuery} $inputs
  */
 export function resetCustomValidity($inputs) {
-  $inputs.each(function() {
+  $inputs.each(function () {
     this.setCustomValidity('');
   });
 }
@@ -15,7 +15,7 @@ export function resetCustomValidity($inputs) {
  * @param  {jQuery} $inputs
  */
 export function setValidityMessage($inputs) {
-  $inputs.each(function() {
+  $inputs.each(function () {
     $(this).nextAll('.invalid-feedback').text(getErrorMessege(this));
   });
 }

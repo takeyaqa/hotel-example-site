@@ -1,6 +1,6 @@
-import {getSessionUser, setLoginNavbar} from './lib/session.js';
+import { getSessionUser, setLoginNavbar } from './lib/session.js';
 
-$(function() {
+$(function () {
   // Check login
   const session = getSessionUser();
   if (session) {

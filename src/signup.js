@@ -1,14 +1,14 @@
-import {getUser, getSessionUser, login, redirectToTop} from './lib/session.js';
-import {resetCustomValidity, setValidityMessage} from './lib/validation.js';
-import {t} from './lib/messages.js';
+import { getUser, getSessionUser, login, redirectToTop } from './lib/session.js';
+import { resetCustomValidity, setValidityMessage } from './lib/validation.js';
+import { t } from './lib/messages.js';
 
 const session = getSessionUser();
 if (session) {
   redirectToTop();
 }
-$(function() {
+$(function () {
   // Setup submit event
-  $('#signup-form').on('submit', function() {
+  $('#signup-form').on('submit', function () {
     resetCustomValidity($(this).find('input'));
 
     // Check exsists user
@@ -29,15 +29,15 @@ $(function() {
     // Submit or error
     if (this.checkValidity()) {
       const newUser = {
-        'email': $('#email').val(),
-        'password': $('#password').val(),
-        'username': $('#username').val(),
-        'rank': $('input[name="rank"]:checked').val(),
-        'address': $('#address').val(),
-        'tel': $('#tel').val(),
-        'gender': $('#gender').val(),
-        'birthday': $('#birthday').val(),
-        'notification': $('#notification').prop('checked'),
+        email: $('#email').val(),
+        password: $('#password').val(),
+        username: $('#username').val(),
+        rank: $('input[name="rank"]:checked').val(),
+        address: $('#address').val(),
+        tel: $('#tel').val(),
+        gender: $('#gender').val(),
+        birthday: $('#birthday').val(),
+        notification: $('#notification').prop('checked'),
       };
 
       // store user data
