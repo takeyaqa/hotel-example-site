@@ -58,10 +58,10 @@ pnpm run build
 
 This will create a `dist` folder with the built assets.
 
-Then start the webpack development server:
+Then start server:
 
 ```bash
-pnpm run start
+node scripts/server.mjs
 ```
 
 After starting the server, open your browser and navigate to:
@@ -82,13 +82,13 @@ pnpm install
 pnpm exec playwright install --with-deps
 ```
 
-By default, tests run against `http://localhost:8080` and the Playwright test runner will start the webpack dev server for you. If you want to run tests against the deployed site instead, set the environment variable and skip starting the local server:
+By default, tests run against `http://localhost:8080` and the Playwright test runner will start the server for you. If you want to run tests against the deployed site instead, set the environment variable and skip starting the local server:
 
 ```bash
 USE_DEPLOYED_SITE=true pnpm run test
 ```
 
-If you prefer to start the local server yourself (for example to keep it running between test invocations), start it in another terminal with `pnpm run start`, then run the Playwright tests; they will reuse the existing server.
+If you prefer to start the local server yourself (for example to keep it running between test invocations), start it in another terminal with `node scripts/server.mjs`, then run the Playwright tests; they will reuse the existing server.
 
 #### Run Tests
 
