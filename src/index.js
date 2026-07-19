@@ -1,4 +1,4 @@
-import { getSessionUser, setLoginNavbar } from './lib/session.js';
+import { getSessionUser, setLoginNavbar } from "./lib/session.js";
 
 $(function () {
   // Check login
