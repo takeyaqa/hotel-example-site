@@ -44,7 +44,15 @@ jobs:
       - name: Build project
         run: pnpm run build
       - name: Copy site
-        run: node scripts/copy_site.mjs
+        run: |
+          mkdir _site
+          cp -R css _site/css
+          cp -R data _site/data
+          cp -R dist _site/dist
+          cp -R en-US _site/en-US
+          cp -R ja _site/ja
+          cp -R src _site/src
+          cp index.html _site/index.html
       - name: Inject analytics tags
         if: ${{ vars.PA_ANALYTICS_ID }}
         env:
