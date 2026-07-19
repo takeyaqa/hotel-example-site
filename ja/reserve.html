@@ -2,13 +2,13 @@
 <html lang="ja">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="robots" content="noindex" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../dist/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../dist/css/jquery-ui.min.css" />
 
     <title>宿泊予約 | HOTEL PLANISPHERE - テスト自動化練習サイト</title>
     <!-- Inject analytics tags -->
@@ -30,14 +30,20 @@
           <div class="col-lg-6 ml-auto">
             <div class="form-group">
               <label for="date">宿泊日 <span class="badge badge-primary">必須</span></label>
-              <input type="text" class="form-control needs-calc" name="date" id="date" required>
+              <input type="text" class="form-control needs-calc" name="date" id="date" required />
               <small class="form-text text-muted">ご予約は3ヶ月以内の日付のみ可能です。</small>
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="term">宿泊数 <span class="badge badge-primary">必須</span></label>
               <div class="input-group">
-                <input type="number" class="form-control needs-calc" name="term" id="term" required>
+                <input
+                  type="number"
+                  class="form-control needs-calc"
+                  name="term"
+                  id="term"
+                  required
+                />
                 <div class="input-group-append">
                   <span class="input-group-text">泊</span>
                 </div>
@@ -47,7 +53,13 @@
             <div class="form-group">
               <label for="head-count">人数 <span class="badge badge-primary">必須</span></label>
               <div class="input-group">
-                <input type="number" class="form-control needs-calc" name="head-count" id="head-count" required>
+                <input
+                  type="number"
+                  class="form-control needs-calc"
+                  name="head-count"
+                  id="head-count"
+                  required
+                />
                 <div class="input-group-append">
                   <span class="input-group-text">人</span>
                 </div>
@@ -57,15 +69,23 @@
             <label>追加プラン <small class="text-muted">お一人様各1,000円</small></label>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input needs-calc" name="breakfast" id="breakfast">
-                <label class="form-check-label" for="breakfast">
-                  朝食バイキング
-                </label>
+                <input
+                  type="checkbox"
+                  class="form-check-input needs-calc"
+                  name="breakfast"
+                  id="breakfast"
+                />
+                <label class="form-check-label" for="breakfast"> 朝食バイキング </label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input needs-calc" name="early-check-in" id="early-check-in">
+                <input
+                  type="checkbox"
+                  class="form-check-input needs-calc"
+                  name="early-check-in"
+                  id="early-check-in"
+                />
                 <label class="form-check-label" for="early-check-in">
                   昼からチェックインプラン
                 </label>
@@ -73,19 +93,24 @@
             </div>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input needs-calc" name="sightseeing" id="sightseeing">
-                <label class="form-check-label" for="sightseeing">
-                  お得な観光プラン
-                </label>
+                <input
+                  type="checkbox"
+                  class="form-check-input needs-calc"
+                  name="sightseeing"
+                  id="sightseeing"
+                />
+                <label class="form-check-label" for="sightseeing"> お得な観光プラン </label>
               </div>
             </div>
             <div class="form-group">
               <label for="username">氏名 <span class="badge badge-primary">必須</span></label>
-              <input type="text" class="form-control" name="username" id="username" required>
+              <input type="text" class="form-control" name="username" id="username" required />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
-              <label for="contact">確認のご連絡 <span class="badge badge-primary">必須</span></label>
+              <label for="contact"
+                >確認のご連絡 <span class="badge badge-primary">必須</span></label
+              >
               <select class="form-control" name="contact" id="contact" required>
                 <option value="" selected>選択してください</option>
                 <option value="no">希望しない</option>
@@ -95,29 +120,54 @@
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group d-none">
-              <label for="email">メールアドレス <span class="badge badge-primary">必須</span></label>
-              <input type="email" class="form-control" name="email" id="email" disabled>
+              <label for="email"
+                >メールアドレス <span class="badge badge-primary">必須</span></label
+              >
+              <input type="email" class="form-control" name="email" id="email" disabled />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group d-none">
               <label for="tel">電話番号 <span class="badge badge-primary">必須</span></label>
-              <input type="tel" class="form-control" name="tel" id="tel" pattern="[0-9]{11}" disabled>
-              <small class="form-text text-muted">11桁の数字で入力してください。例：01133335555</small>
+              <input
+                type="tel"
+                class="form-control"
+                name="tel"
+                id="tel"
+                pattern="[0-9]{11}"
+                disabled
+              />
+              <small class="form-text text-muted"
+                >11桁の数字で入力してください。例：01133335555</small
+              >
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="comment">ご要望・ご連絡事項等ありましたらご記入ください</label>
-              <textarea class="form-control" name="comment" id="comment" maxlength="140" rows="3"></textarea>
+              <textarea
+                class="form-control"
+                name="comment"
+                id="comment"
+                maxlength="140"
+                rows="3"
+              ></textarea>
               <div class="invalid-feedback"></div>
             </div>
-            <input type="hidden" name="plan-id-hidden" id="plan-id-hidden" value="">
-            <input type="hidden" name="plan-name-hidden" id="plan-name-hidden" value="">
-            <input type="hidden" name="room-bill-hidden" id="room-bill-hidden" value="">
+            <input type="hidden" name="plan-id-hidden" id="plan-id-hidden" value="" />
+            <input type="hidden" name="plan-name-hidden" id="plan-name-hidden" value="" />
+            <input type="hidden" name="room-bill-hidden" id="room-bill-hidden" value="" />
           </div>
           <div class="col-lg-3 mr-auto">
             <h3>合計</h3>
             <output class="h1 my-2" name="total-bill" id="total-bill">-</output>
-            <button type="submit" class="btn btn-primary btn-block my-3" data-test="submit-button" id="submit-button" disabled>予約内容を確認する</button>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block my-3"
+              data-test="submit-button"
+              id="submit-button"
+              disabled
+            >
+              予約内容を確認する
+            </button>
             <div id="room-info"><p>部屋指定なし</p></div>
           </div>
         </div>
@@ -126,7 +176,9 @@
     <footer class="text-center py-5">
       <div class="container">
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a></li>
+          <li class="list-inline-item">
+            <a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a>
+          </li>
         </ul>
         <p class="text-muted">© 2020-2026 Takeshi Kishi</p>
       </div>

@@ -2,13 +2,13 @@
 <html lang="en-US">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="noindex">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="robots" content="noindex" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../dist/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../dist/css/jquery-ui.min.css" />
 
     <title>Reservation | HOTEL PLANISPHERE - Website for Practice Test Automation</title>
     <!-- Inject analytics tags -->
@@ -30,14 +30,22 @@
           <div class="col-lg-6 ml-auto">
             <div class="form-group">
               <label for="date">Check-in <span class="badge badge-primary">required</span></label>
-              <input type="text" class="form-control needs-calc" name="date" id="date" required>
-              <small class="form-text text-muted">Reservations can only be made within 3 months.</small>
+              <input type="text" class="form-control needs-calc" name="date" id="date" required />
+              <small class="form-text text-muted"
+                >Reservations can only be made within 3 months.</small
+              >
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="term">Stay <span class="badge badge-primary">required</span></label>
               <div class="input-group">
-                <input type="number" class="form-control needs-calc" name="term" id="term" required>
+                <input
+                  type="number"
+                  class="form-control needs-calc"
+                  name="term"
+                  id="term"
+                  required
+                />
                 <div class="input-group-append">
                   <span class="input-group-text">nights</span>
                 </div>
@@ -45,9 +53,17 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="head-count">Guests <span class="badge badge-primary">required</span></label>
+              <label for="head-count"
+                >Guests <span class="badge badge-primary">required</span></label
+              >
               <div class="input-group">
-                <input type="number" class="form-control needs-calc" name="head-count" id="head-count" required>
+                <input
+                  type="number"
+                  class="form-control needs-calc"
+                  name="head-count"
+                  id="head-count"
+                  required
+                />
                 <div class="input-group-append">
                   <span class="input-group-text">persons</span>
                 </div>
@@ -57,35 +73,46 @@
             <label>Additional plans <small class="text-muted">$10.00 per guest</small></label>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input needs-calc" name="breakfast" id="breakfast">
-                <label class="form-check-label" for="breakfast">
-                  Breakfast
-                </label>
+                <input
+                  type="checkbox"
+                  class="form-check-input needs-calc"
+                  name="breakfast"
+                  id="breakfast"
+                />
+                <label class="form-check-label" for="breakfast"> Breakfast </label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input needs-calc" name="early-check-in" id="early-check-in">
-                <label class="form-check-label" for="early-check-in">
-                  Early check-in
-                </label>
+                <input
+                  type="checkbox"
+                  class="form-check-input needs-calc"
+                  name="early-check-in"
+                  id="early-check-in"
+                />
+                <label class="form-check-label" for="early-check-in"> Early check-in </label>
               </div>
             </div>
             <div class="form-group">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input needs-calc" name="sightseeing" id="sightseeing">
-                <label class="form-check-label" for="sightseeing">
-                  Sightseeing
-                </label>
+                <input
+                  type="checkbox"
+                  class="form-check-input needs-calc"
+                  name="sightseeing"
+                  id="sightseeing"
+                />
+                <label class="form-check-label" for="sightseeing"> Sightseeing </label>
               </div>
             </div>
             <div class="form-group">
               <label for="username">Name <span class="badge badge-primary">required</span></label>
-              <input type="text" class="form-control" name="username" id="username" required>
+              <input type="text" class="form-control" name="username" id="username" required />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
-              <label for="contact">Confirmation <span class="badge badge-primary">required</span></label>
+              <label for="contact"
+                >Confirmation <span class="badge badge-primary">required</span></label
+              >
               <select class="form-control" name="contact" id="contact" required>
                 <option value="" selected>Choose one</option>
                 <option value="no">None</option>
@@ -96,28 +123,51 @@
             </div>
             <div class="form-group d-none">
               <label for="email">Email <span class="badge badge-primary">required</span></label>
-              <input type="email" class="form-control" name="email" id="email" disabled>
+              <input type="email" class="form-control" name="email" id="email" disabled />
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group d-none">
               <label for="tel">Tel <span class="badge badge-primary">required</span></label>
-              <input type="tel" class="form-control" name="tel" id="tel" pattern="[0-9]{11}" disabled>
-              <small class="form-text text-muted">Please enter 11-digit number. Ex: 01133335555</small>
+              <input
+                type="tel"
+                class="form-control"
+                name="tel"
+                id="tel"
+                pattern="[0-9]{11}"
+                disabled
+              />
+              <small class="form-text text-muted"
+                >Please enter 11-digit number. Ex: 01133335555</small
+              >
               <div class="invalid-feedback"></div>
             </div>
             <div class="form-group">
               <label for="comment">Special request</label>
-              <textarea class="form-control" name="comment" id="comment" maxlength="140" rows="3"></textarea>
+              <textarea
+                class="form-control"
+                name="comment"
+                id="comment"
+                maxlength="140"
+                rows="3"
+              ></textarea>
               <div class="invalid-feedback"></div>
             </div>
-            <input type="hidden" name="plan-id-hidden" id="plan-id-hidden" value="">
-            <input type="hidden" name="plan-name-hidden" id="plan-name-hidden" value="">
-            <input type="hidden" name="room-bill-hidden" id="room-bill-hidden" value="">
+            <input type="hidden" name="plan-id-hidden" id="plan-id-hidden" value="" />
+            <input type="hidden" name="plan-name-hidden" id="plan-name-hidden" value="" />
+            <input type="hidden" name="room-bill-hidden" id="room-bill-hidden" value="" />
           </div>
           <div class="col-lg-3 mr-auto">
             <h3>Total</h3>
             <output class="h1 my-2" name="total-bill" id="total-bill">-</output>
-            <button type="submit" class="btn btn-primary btn-block my-3" data-test="submit-button" id="submit-button" disabled>Confirm Reservation</button>
+            <button
+              type="submit"
+              class="btn btn-primary btn-block my-3"
+              data-test="submit-button"
+              id="submit-button"
+              disabled
+            >
+              Confirm Reservation
+            </button>
             <div id="room-info"><p>choose room freely</p></div>
           </div>
         </div>
@@ -126,7 +176,9 @@
     <footer class="text-center py-5">
       <div class="container">
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a></li>
+          <li class="list-inline-item">
+            <a href="https://github.com/takeyaqa/hotel-example-site">GitHub</a>
+          </li>
         </ul>
         <p class="text-muted">© 2020-2026 Takeshi Kishi</p>
       </div>

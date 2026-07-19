@@ -8,5 +8,5 @@
       }
     }
   ],
-  "ignorePatterns": ["/data", "/en-US", "/ja", "src", "index.html"]
+  "ignorePatterns": ["/data", "src"]
 }
