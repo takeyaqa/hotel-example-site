@@ -18,7 +18,6 @@ updates:
           - "oxlint"
       webpack:
         patterns:
-          - "copy-webpack-plugin"
           - "terser-webpack-plugin"
           - "webpack"
           - "webpack-cli"

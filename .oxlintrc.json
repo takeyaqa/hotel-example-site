@@ -7,5 +7,6 @@
   "rules": {},
   "env": {
     "builtin": true
-  }
+  },
+  "ignorePatterns": ["*.min.css", "*.min.js", "datepicker-ja.js"]
 }
