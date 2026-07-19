@@ -1,5 +1,5 @@
-import * as fs from "node:fs";
-import * as path from "node:path";
+import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { extname, join } from "node:path";
 
 /**
  * Recursively search for HTML files from the specified directory
@@ -8,16 +8,16 @@ import * as path from "node:path";
  * @returns {string[]} Array of HTML file paths
  */
 function findHtmlFiles(dir, htmlFiles = []) {
-  const files = fs.readdirSync(dir);
+  const files = readdirSync(dir);
 
   for (const file of files) {
-    const filePath = path.join(dir, file);
-    const stat = fs.statSync(filePath);
+    const filePath = join(dir, file);
+    const stat = statSync(filePath);
 
     if (stat.isDirectory()) {
       // Recursively search if the entry is a directory
       findHtmlFiles(filePath, htmlFiles);
-    } else if (stat.isFile() && path.extname(file).toLowerCase() === ".html") {
+    } else if (stat.isFile() && extname(file).toLowerCase() === ".html") {
       // Add to the array if the entry is an HTML file
       htmlFiles.push(filePath);
     }
@@ -33,7 +33,7 @@ function findHtmlFiles(dir, htmlFiles = []) {
  */
 function loadHtmlFile(filePath) {
   try {
-    const content = fs.readFileSync(filePath, "utf8");
+    const content = readFileSync(filePath, "utf8");
 
     return {
       filePath,
@@ -94,7 +94,7 @@ function injectAnalyticsScript(loadedFile) {
  */
 function saveHtmlFile(filePath, content) {
   try {
-    fs.writeFileSync(filePath, content, "utf8");
+    writeFileSync(filePath, content, "utf8");
   } catch (error) {
     console.error(error);
     process.exit(1);
@@ -107,7 +107,7 @@ function saveHtmlFile(filePath, content) {
  * @returns {Object[]} Array of loaded HTML files
  */
 function loadHtmlFilesRecursively(targetDir) {
-  if (!fs.existsSync(targetDir)) {
+  if (!existsSync(targetDir)) {
     return [];
   }
 
@@ -133,7 +133,7 @@ function main() {
 
   // Process the top-level index.html
   const topLevelIndexPath = "index.html";
-  if (fs.existsSync(topLevelIndexPath)) {
+  if (existsSync(topLevelIndexPath)) {
     const loadedFile = loadHtmlFile(topLevelIndexPath);
     if (loadedFile) {
       allLoadedFiles.push(loadedFile);
