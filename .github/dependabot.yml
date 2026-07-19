@@ -21,7 +21,6 @@ updates:
           - "terser-webpack-plugin"
           - "webpack"
           - "webpack-cli"
-          - "webpack-dev-server"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]

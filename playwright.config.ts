@@ -75,7 +75,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: !useDeployedSite
     ? {
-        command: "pnpm run start",
+        command: "node scripts/server.mjs",
         url: "http://localhost:8080",
         reuseExistingServer: !process.env.CI,
       }
