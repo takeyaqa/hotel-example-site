@@ -61,7 +61,7 @@ This will create a `dist` folder with the built assets.
 Then start server:
 
 ```bash
-node scripts/server.mjs
+node scripts/server.js
 ```
 
 After starting the server, open your browser and navigate to:
@@ -88,7 +88,7 @@ By default, tests run against `http://localhost:8080` and the Playwright test ru
 USE_DEPLOYED_SITE=true pnpm run test
 ```
 
-If you prefer to start the local server yourself (for example to keep it running between test invocations), start it in another terminal with `node scripts/server.mjs`, then run the Playwright tests; they will reuse the existing server.
+If you prefer to start the local server yourself (for example to keep it running between test invocations), start it in another terminal with `node scripts/server.js`, then run the Playwright tests; they will reuse the existing server.
 
 #### Run Tests
 

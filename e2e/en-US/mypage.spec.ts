@@ -1,5 +1,8 @@
-import path from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { test, expect } from "@playwright/test";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 test.describe("MyPage", () => {
   test.describe("Preset Users", () => {
@@ -111,9 +114,7 @@ test.describe("MyPage", () => {
       await page.getByRole("button", { name: "Icon Setting" }).click();
       await expect(page).toHaveTitle(/Setting Icon/);
 
-      await page
-        .getByLabel("Image")
-        .setInputFiles(path.join(__dirname, "..", "assets", "dummy.txt"));
+      await page.getByLabel("Image").setInputFiles(join(__dirname, "..", "assets", "dummy.txt"));
       await page.getByLabel("Zoom").focus();
 
       await expect(page.locator("#icon ~ .invalid-feedback")).toHaveText(
@@ -127,7 +128,7 @@ test.describe("MyPage", () => {
 
       await page
         .getByLabel("Image")
-        .setInputFiles(path.join(__dirname, "..", "assets", "240x240_12.png"));
+        .setInputFiles(join(__dirname, "..", "assets", "240x240_12.png"));
       await page.getByLabel("Zoom").focus();
 
       await expect(page.locator("#icon ~ .invalid-feedback")).toHaveText(
@@ -141,7 +142,7 @@ test.describe("MyPage", () => {
 
       await page
         .getByLabel("Image")
-        .setInputFiles(path.join(__dirname, "..", "assets", "240x240_01.png"));
+        .setInputFiles(join(__dirname, "..", "assets", "240x240_01.png"));
       await page.getByLabel("Zoom").focus();
       await page.getByLabel("Zoom").fill("80");
       await page.getByLabel("Border Color").fill("#000000");
