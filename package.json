@@ -2,6 +2,7 @@
   "name": "hotel-example-site",
   "private": true,
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "build": "webpack",
     "fmt": "oxfmt",

@@ -1,7 +1,10 @@
-const path = require("node:path");
-const TerserPlugin = require("terser-webpack-plugin");
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import TerserPlugin from "terser-webpack-plugin";
 
-module.exports = {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default {
   mode: "production",
   entry: {
     confirm: "./src/confirm.js",
@@ -15,7 +18,7 @@ module.exports = {
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
+    path: resolve(__dirname, "dist"),
     clean: true,
   },
   optimization: {

@@ -57,7 +57,7 @@ jobs:
         if: ${{ vars.PA_ANALYTICS_ID }}
         env:
           PA_ANALYTICS_ID: ${{ vars.PA_ANALYTICS_ID }}
-        run: node scripts/inject_analytics.mjs
+        run: node scripts/inject_analytics.js
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact

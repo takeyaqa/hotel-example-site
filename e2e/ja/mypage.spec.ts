@@ -1,5 +1,8 @@
-import path from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { test, expect } from "@playwright/test";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 test.describe("マイページ", () => {
   test.describe("定義済みユーザ", () => {
@@ -114,7 +117,7 @@ test.describe("マイページ", () => {
 
       await page
         .getByLabel("アイコン画像")
-        .setInputFiles(path.join(__dirname, "..", "assets", "dummy.txt"));
+        .setInputFiles(join(__dirname, "..", "assets", "dummy.txt"));
       await page.getByLabel("拡大・縮小").focus();
 
       await expect(page.locator("#icon ~ .invalid-feedback")).toHaveText(
@@ -128,7 +131,7 @@ test.describe("マイページ", () => {
 
       await page
         .getByLabel("アイコン画像")
-        .setInputFiles(path.join(__dirname, "..", "assets", "240x240_12.png"));
+        .setInputFiles(join(__dirname, "..", "assets", "240x240_12.png"));
       await page.getByLabel("拡大・縮小").focus();
 
       await expect(page.locator("#icon ~ .invalid-feedback")).toHaveText(
@@ -142,7 +145,7 @@ test.describe("マイページ", () => {
 
       await page
         .getByLabel("アイコン画像")
-        .setInputFiles(path.join(__dirname, "..", "assets", "240x240_01.png"));
+        .setInputFiles(join(__dirname, "..", "assets", "240x240_01.png"));
       await page.getByLabel("拡大・縮小").focus();
       await page.getByLabel("拡大・縮小").fill("80");
       await page.getByLabel("枠線の色").fill("#000000");

@@ -75,7 +75,7 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: !useDeployedSite
     ? {
-        command: "node scripts/server.mjs",
+        command: "node scripts/server.js",
         url: "http://localhost:8080",
         reuseExistingServer: !process.env.CI,
       }
