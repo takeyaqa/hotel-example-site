@@ -1,7 +1,6 @@
 _site/
 .pnpm-store/
 node_modules/
-dist/
 
 # Playwright
 /test-results/

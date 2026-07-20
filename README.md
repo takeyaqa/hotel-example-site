@@ -38,27 +38,13 @@ This site provides mocked booking hotel feature. It has input forms to log in, s
 
 ### Running Server
 
-For development, you can serve this site locally using webpack.
+For development, you can serve this site locally.
 
 #### Prerequisites
 
-Make sure you have Node.js and pnpm installed, then install dependencies:
+Make sure you have Node.js installed:
 
-```bash
-pnpm install
-```
-
-#### Build and Start Server
-
-First, build the project:
-
-```bash
-pnpm run build
-```
-
-This will create a `dist` folder with the built assets.
-
-Then start server:
+#### Start Server
 
 ```bash
 node scripts/server.js
