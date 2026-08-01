@@ -7,22 +7,15 @@ updates:
     versioning-strategy: increase
     cooldown:
       default-days: 3
-    open-pull-requests-limit: 10
     commit-message:
       prefix: "build"
       include: "scope"
     groups:
-      oxc:
+      monthly-batch:
         patterns:
-          - "oxfmt"
-          - "oxlint"
-      webpack:
-        patterns:
-          - "terser-webpack-plugin"
-          - "webpack"
-          - "webpack-cli"
+          - "*"
     ignore:
-      - dependency-name: "*"
+      - dependency-name: "@types/node"
         update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -33,3 +26,7 @@ updates:
     commit-message:
       prefix: "ci"
       include: "scope"
+    groups:
+      monthly-batch:
+        patterns:
+          - "*"
