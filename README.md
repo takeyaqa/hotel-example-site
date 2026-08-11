@@ -11,6 +11,11 @@
 >
 > **Redirects from hotel.testplanisphere.dev ended on December 31, 2025.**
 
+> [!NOTE]
+> In August 2026, this project migrated from a webpack-based build to native ES modules.
+> There is no bundling or build step. Serve the repository over HTTP using the command below;
+> opening `index.html` directly from the filesystem is not supported.
+
 ---
 
 ## This site is a sandbox to practice test automation.
@@ -38,27 +43,13 @@ This site provides mocked booking hotel feature. It has input forms to log in, s
 
 ### Running Server
 
-For development, you can serve this site locally using webpack.
+For development, you can serve this site locally.
 
 #### Prerequisites
 
-Make sure you have Node.js and pnpm installed, then install dependencies:
+Make sure you have Node.js installed:
 
-```bash
-pnpm install
-```
-
-#### Build and Start Server
-
-First, build the project:
-
-```bash
-pnpm run build
-```
-
-This will create a `dist` folder with the built assets.
-
-Then start server:
+#### Start Server
 
 ```bash
 node scripts/server.js

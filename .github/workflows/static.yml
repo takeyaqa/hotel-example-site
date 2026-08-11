@@ -30,26 +30,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Setup pnpm
-        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6.0.9
-        with:
-          version: 10
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
           node-version-file: "package.json"
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build project
-        run: pnpm run build
       - name: Copy site
         run: |
           mkdir _site
           cp -R assets _site/assets
           cp -R css _site/css
           cp -R data _site/data
-          cp -R dist _site/dist
           cp -R en-US _site/en-US
           cp -R ja _site/ja
           cp -R src _site/src
