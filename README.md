@@ -11,6 +11,11 @@
 >
 > **Redirects from hotel.testplanisphere.dev ended on December 31, 2025.**
 
+> [!NOTE]
+> In August 2026, this project migrated from a webpack-based build to native ES modules.
+> There is no bundling or build step. Serve the repository over HTTP using the command below;
+> opening `index.html` directly from the filesystem is not supported.
+
 ---
 
 ## This site is a sandbox to practice test automation.
