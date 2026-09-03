@@ -20,12 +20,10 @@
     "oxlint": "^1.76.0"
   },
   "devEngines": {
-    "packageManager": [
-      {
-        "name": "pnpm",
-        "version": "^10"
-      }
-    ],
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^10"
+    },
     "runtime": {
       "name": "node",
       "version": "^24"
