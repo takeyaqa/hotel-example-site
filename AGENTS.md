@@ -19,7 +19,7 @@ This repository contains a static hotel-booking practice site for browser automa
 
 ## Tooling and Setup
 
-- Use Node.js 24 and pnpm 10. `mise install` can provision the versions declared in `mise.toml`.
+- Use Node.js 24 and pnpm 11. `mise install` can provision the versions declared in `mise.toml`.
 - Install dependencies with `pnpm install`.
 - Install the Chromium test browser with `pnpm exec playwright install chromium`. Use `--with-deps` when system dependencies are also required.
 - Serve the repository with `node scripts/server.js`, then open `http://localhost:8080/en-US/` or `http://localhost:8080/ja/`.
