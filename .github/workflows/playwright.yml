@@ -19,7 +19,6 @@ jobs:
       - uses: pnpm/setup@v3.1.2
         with:
           cache: true
-      - run: pnpm ci
       - run: pnpm run test
         env:
           USE_DEPLOYED_SITE: "true"
