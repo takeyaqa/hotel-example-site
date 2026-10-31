@@ -1,2 +1,3 @@
 minimumReleaseAge: 4320
 trustPolicy: no-downgrade
+pmOnFail: ignore
