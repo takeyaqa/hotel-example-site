@@ -20,7 +20,7 @@ jobs:
           node-version-file: "package.json"
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm ci
       - run: pnpm run fmt:check
       - run: pnpm run lint
   test:
@@ -43,7 +43,7 @@ jobs:
           node-version-file: "package.json"
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm ci
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps chromium
       - name: Run Playwright tests for local server

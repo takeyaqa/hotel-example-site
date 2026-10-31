@@ -26,7 +26,7 @@ jobs:
           node-version-file: "package.json"
           cache: "pnpm"
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm ci
       - name: Run Playwright tests for deployed site
         run: pnpm run test
         env:
